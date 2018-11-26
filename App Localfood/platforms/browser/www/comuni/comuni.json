@@ -1,0 +1,379 @@
+{
+  "26010":{
+      "città" : [
+        {
+          "value" : "Bagnolo Cremasco",
+          "abilitato" : 0,
+          "shipping_price" : "2",
+          "set_negozi" : [
+            {"id_negozio": 1},
+            {"id_negozio": 2},
+            {"id_negozio": 3}
+          ]
+        },
+        {
+          "value" : "Camisano",
+          "abilitato" : 0,
+          "shipping_price" : "2",
+          "set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+        {
+          "value" : "Campagnola Cremasca",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+        {
+          "value" : "Capergnanica",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+        {
+          "value" : "Capralba",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+        {
+          "value" : "Casale Cremasco-Vidolasco",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+        {
+          "value" : "Casaletto Ceredano",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+        {
+          "value" : "Casaletto Vaprio",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+        {
+          "value" : "Castel Gabbiano",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+        {
+          "value" : "Chieve",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+        {
+          "value" : "Credera Rubbiano",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+        {
+          "value" : "Cremosano",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+        {
+          "value" : "Dovera",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+        {
+          "value" : "Fiesco",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+        {
+          "value" : "Izano",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+        {
+          "value" : "Monte Cremasco",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+        {
+          "value" : "Montodine",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+        {
+          "value" : "Moscazzano",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+        {
+          "value" : "Offanengo",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+        {
+          "value" : "Pianengo",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+        {
+          "value" : "Ricengo",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+        {
+          "value" : "Ripalta Arpina",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+        {
+          "value" : "Ripalta Cremasca",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+        {
+          "value" : "Ripalta Guerina",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+        {
+          "value" : "Salvirola",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+        {
+          "value" : "Sergnano",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+        {
+          "value" : "Vaiano Cremasco",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        }
+      ]
+  },
+  "26012":{
+    "città" : [
+      {
+        "value": "Castelleone",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        }
+    ]
+  },
+  "26013":{
+    "città" : [
+      {
+        "value" : "Crema",
+          "abilitato" : 1,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        }
+    ]
+  },
+  "26014":{
+    "città" : [
+      {
+        "value" : "Caseletto di sopra",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+      {
+        "value" : "Romanengo",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        }
+    ]
+  },
+  "26015":{
+    "città" : [
+      {
+        "value" : "Soresina",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        }
+    ]
+  },
+  "26017":{
+    "città" : [
+      {
+        "value" : "Pieranica",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+      {
+        "value" : "Quintano",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+      {
+        "value" : "Torlino Vimercati",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+      {
+        "value" : "Trescore Cremasco",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        }
+    ]
+  },
+  "26018":{
+    "città" : [
+      {
+        "value" : "Trigolo",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        }
+    ]
+  },
+  "26019":{
+    "città" : [
+      {
+        "value" : "Vailate",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        }
+    ]
+  },
+  "26020":{
+    "città" : [
+      {
+        "value" : "Agnadello",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+      {
+        "value" : "Cumignano sul Naviglio",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+      {
+        "value" : "Genivolta",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+      {
+        "value" : "Gombito",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+      {
+        "value" : "Madignano",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+      {
+        "value" : "Palazzo Pignano",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        },
+      {
+        "value" : "Ticengo",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        }
+
+    ]
+  },
+  "26025":{
+    "città" : [
+      {"value" : "Pandino",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        }
+    ]
+  },
+  "26027":{
+    "città" : [
+      {
+        "value" : "Rivolta d'adda",
+          "abilitato" : 0,
+          "shipping_price" : "2","set_negozi" : [
+            {"id_negozio": 1}
+          ]
+        }
+    ]
+  }
+}

@@ -1,0 +1,868 @@
+[
+{
+  "cap": "26010",
+  "comune": [
+    {
+      "value": "Bagnolo Cremasco",
+      "abilitato": 1,
+      "shipping_price": "2",
+      "set_negozi": [
+        {
+          "id_negozio": 3,
+          "url_negozio" : "lapiada_shoppage.html",
+          "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+          "nome_negozio" : "La Piada",
+          "segmento" : "Piadineria",
+          "orario_consegna" : ["","19:45 - 21:30"],
+          "rating" : 4
+        }
+      ]
+    },
+    {
+      "value": "Camisano",
+      "abilitato": 0,
+      "shipping_price": "2",
+      "set_negozi": [
+        {
+          "id_negozio": 3,
+          "url_negozio" : "lapiada_shoppage.html",
+          "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+          "nome_negozio" : "La Piada",
+          "segmento" : "Piadineria",
+          "orario_consegna" : ["","19:45 - 21:30"],
+          "rating" : 4
+        }
+      ]
+    },
+    {
+      "value": "Campagnola Cremasca",
+      "abilitato": 0,
+      "shipping_price": "2",
+      "set_negozi": [
+        {
+          "id_negozio": 3,
+          "url_negozio" : "lapiada_shoppage.html",
+          "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+          "nome_negozio" : "La Piada",
+          "segmento" : "Piadineria",
+          "orario_consegna" : ["","19:45 - 21:30"],
+          "rating" : 4
+        }
+      ]
+    },
+    {
+      "value": "Capergnanica",
+      "abilitato": 0,
+      "shipping_price": "2",
+      "set_negozi": [
+        {
+          "id_negozio": 3,
+          "url_negozio" : "lapiada_shoppage.html",
+          "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+          "nome_negozio" : "La Piada",
+          "segmento" : "Piadineria",
+          "orario_consegna" : ["","19:45 - 21:30"],
+          "rating" : 4
+        }
+      ]
+    },
+    {
+      "value": "Capralba",
+      "abilitato": 0,
+      "shipping_price": "2",
+      "set_negozi": [
+        {
+          "id_negozio": 3,
+          "url_negozio" : "lapiada_shoppage.html",
+          "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+          "nome_negozio" : "La Piada",
+          "segmento" : "Piadineria",
+          "orario_consegna" : ["","19:45 - 21:30"],
+          "rating" : 4
+        }
+      ]
+    },
+    {
+      "value": "Casale Cremasco-Vidolasco",
+      "abilitato": 0,
+      "shipping_price": "2",
+      "set_negozi": [
+        {
+          "id_negozio": 3,
+          "url_negozio" : "lapiada_shoppage.html",
+          "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+          "nome_negozio" : "La Piada",
+          "segmento" : "Piadineria",
+          "orario_consegna" : ["","19:45 - 21:30"],
+          "rating" : 4
+        }
+      ]
+    },
+    {
+      "value": "Casaletto Ceredano",
+      "abilitato": 0,
+      "shipping_price": "2",
+      "set_negozi": [
+        {
+          "id_negozio": 3,
+          "url_negozio" : "lapiada_shoppage.html",
+          "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+          "nome_negozio" : "La Piada",
+          "segmento" : "Piadineria",
+          "orario_consegna" : ["","19:45 - 21:30"],
+          "rating" : 4
+        }
+      ]
+    },
+    {
+      "value": "Casaletto Vaprio",
+      "abilitato": 0,
+      "shipping_price": "2",
+      "set_negozi": [
+        {
+          "id_negozio": 3,
+          "url_negozio" : "lapiada_shoppage.html",
+          "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+          "nome_negozio" : "La Piada",
+          "segmento" : "Piadineria",
+          "orario_consegna" : ["","19:45 - 21:30"],
+          "rating" : 4
+        }
+      ]
+    },
+    {
+      "value": "Castel Gabbiano",
+      "abilitato": 0,
+      "shipping_price": "2",
+      "set_negozi": [
+        {
+          "id_negozio": 3,
+          "url_negozio" : "lapiada_shoppage.html",
+          "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+          "nome_negozio" : "La Piada",
+          "segmento" : "Piadineria",
+          "orario_consegna" : ["","19:45 - 21:30"],
+          "rating" : 4
+        }
+      ]
+    },
+    {
+      "value": "Chieve",
+      "abilitato": 0,
+      "shipping_price": "2",
+      "set_negozi": [
+        {
+          "id_negozio": 3,
+          "url_negozio" : "lapiada_shoppage.html",
+          "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+          "nome_negozio" : "La Piada",
+          "segmento" : "Piadineria",
+          "orario_consegna" : ["","19:45 - 21:30"],
+          "rating" : 4
+        }
+      ]
+    },
+    {
+      "value": "Credera Rubbiano",
+      "abilitato": 0,
+      "shipping_price": "2",
+      "set_negozi": [
+        {
+          "id_negozio": 3,
+          "url_negozio" : "lapiada_shoppage.html",
+          "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+          "nome_negozio" : "La Piada",
+          "segmento" : "Piadineria",
+          "orario_consegna" : ["","19:45 - 21:30"],
+          "rating" : 4
+        }
+      ]
+    },
+    {
+      "value": "Cremosano",
+      "abilitato": 0,
+      "shipping_price": "2",
+      "set_negozi": [
+        {
+          "id_negozio": 3,
+          "url_negozio" : "lapiada_shoppage.html",
+          "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+          "nome_negozio" : "La Piada",
+          "segmento" : "Piadineria",
+          "orario_consegna" : ["","19:45 - 21:30"],
+          "rating" : 4
+        }
+      ]
+    },
+    {
+      "value": "Dovera",
+      "abilitato": 0,
+      "shipping_price": "2",
+      "set_negozi": [
+        {
+          "id_negozio": 3,
+          "url_negozio" : "lapiada_shoppage.html",
+          "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+          "nome_negozio" : "La Piada",
+          "segmento" : "Piadineria",
+          "orario_consegna" : ["","19:45 - 21:30"],
+          "rating" : 4
+        }
+      ]
+    },
+    {
+      "value": "Fiesco",
+      "abilitato": 0,
+      "shipping_price": "2",
+      "set_negozi": [
+        {
+          "id_negozio": 3,
+          "url_negozio" : "lapiada_shoppage.html",
+          "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+          "nome_negozio" : "La Piada",
+          "segmento" : "Piadineria",
+          "orario_consegna" : ["","19:45 - 21:30"],
+          "rating" : 4
+        }
+      ]
+    },
+    {
+      "value": "Izano",
+      "abilitato": 0,
+      "shipping_price": "2",
+      "set_negozi": [
+        {
+          "id_negozio": 3,
+          "url_negozio" : "lapiada_shoppage.html",
+          "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+          "nome_negozio" : "La Piada",
+          "segmento" : "Piadineria",
+          "orario_consegna" : ["","19:45 - 21:30"],
+          "rating" : 4
+        }
+      ]
+    },
+    {
+      "value": "Monte Cremasco",
+      "abilitato": 0,
+      "shipping_price": "2",
+      "set_negozi": [
+        {
+          "id_negozio": 3,
+          "url_negozio" : "lapiada_shoppage.html",
+          "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+          "nome_negozio" : "La Piada",
+          "segmento" : "Piadineria",
+          "orario_consegna" : ["","19:45 - 21:30"],
+          "rating" : 4
+        }
+      ]
+    },
+    {
+      "value": "Montodine",
+      "abilitato": 0,
+      "shipping_price": "2",
+      "set_negozi": [
+        {
+          "id_negozio": 3,
+          "url_negozio" : "lapiada_shoppage.html",
+          "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+          "nome_negozio" : "La Piada",
+          "segmento" : "Piadineria",
+          "orario_consegna" : ["","19:45 - 21:30"],
+          "rating" : 4
+        }
+      ]
+    },
+    {
+      "value": "Moscazzano",
+      "abilitato": 0,
+      "shipping_price": "2",
+      "set_negozi": [
+        {
+          "id_negozio": 3,
+          "url_negozio" : "lapiada_shoppage.html",
+          "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+          "nome_negozio" : "La Piada",
+          "segmento" : "Piadineria",
+          "orario_consegna" : ["","19:45 - 21:30"],
+          "rating" : 4
+        }
+      ]
+    },
+    {
+      "value": "Offanengo",
+      "abilitato": 0,
+      "shipping_price": "2",
+      "set_negozi": [
+        {
+          "id_negozio": 3,
+          "url_negozio" : "lapiada_shoppage.html",
+          "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+          "nome_negozio" : "La Piada",
+          "segmento" : "Piadineria",
+          "orario_consegna" : ["","19:45 - 21:30"],
+          "rating" : 4
+        }
+      ]
+    },
+    {
+      "value": "Pianengo",
+      "abilitato": 0,
+      "shipping_price": "2",
+      "set_negozi": [
+        {
+          "id_negozio": 3,
+          "url_negozio" : "lapiada_shoppage.html",
+          "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+          "nome_negozio" : "La Piada",
+          "segmento" : "Piadineria",
+          "orario_consegna" : ["","19:45 - 21:30"],
+          "rating" : 4
+        }
+      ]
+    },
+    {
+      "value": "Ricengo",
+      "abilitato": 0,
+      "shipping_price": "2",
+      "set_negozi": [
+        {
+          "id_negozio": 3,
+          "url_negozio" : "lapiada_shoppage.html",
+          "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+          "nome_negozio" : "La Piada",
+          "segmento" : "Piadineria",
+          "orario_consegna" : ["","19:45 - 21:30"],
+          "rating" : 4
+        }
+      ]
+    },
+    {
+      "value": "Ripalta Arpina",
+      "abilitato": 0,
+      "shipping_price": "2",
+      "set_negozi": [
+        {
+          "id_negozio": 3,
+          "url_negozio" : "lapiada_shoppage.html",
+          "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+          "nome_negozio" : "La Piada",
+          "segmento" : "Piadineria",
+          "orario_consegna" : ["","19:45 - 21:30"],
+          "rating" : 4
+        }
+      ]
+    },
+    {
+      "value": "Ripalta Cremasca",
+      "abilitato": 0,
+      "shipping_price": "2",
+      "set_negozi": [
+        {
+          "id_negozio": 3,
+          "url_negozio" : "lapiada_shoppage.html",
+          "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+          "nome_negozio" : "La Piada",
+          "segmento" : "Piadineria",
+          "orario_consegna" : ["","19:45 - 21:30"],
+          "rating" : 4
+        }
+      ]
+    },
+    {
+      "value": "Ripalta Guerina",
+      "abilitato": 0,
+      "shipping_price": "2",
+      "set_negozi": [
+        {
+          "id_negozio": 3,
+          "url_negozio" : "lapiada_shoppage.html",
+          "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+          "nome_negozio" : "La Piada",
+          "segmento" : "Piadineria",
+          "orario_consegna" : ["","19:45 - 21:30"],
+          "rating" : 4
+        }
+      ]
+    },
+    {
+      "value": "Salvirola",
+      "abilitato": 0,
+      "shipping_price": "2",
+      "set_negozi": [
+        {
+          "id_negozio": 3,
+          "url_negozio" : "lapiada_shoppage.html",
+          "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+          "nome_negozio" : "La Piada",
+          "segmento" : "Piadineria",
+          "orario_consegna" : ["","19:45 - 21:30"],
+          "rating" : 4
+        }
+      ]
+    },
+    {
+      "value": "Sergnano",
+      "abilitato": 0,
+      "shipping_price": "2",
+      "set_negozi": [
+        {
+          "id_negozio": 3,
+          "url_negozio" : "lapiada_shoppage.html",
+          "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+          "nome_negozio" : "La Piada",
+          "segmento" : "Piadineria",
+          "orario_consegna" : ["","19:45 - 21:30"],
+          "rating" : 4
+        }
+      ]
+    },
+    {
+      "value": "Vaiano Cremasco",
+      "abilitato": 0,
+      "shipping_price": "2",
+      "set_negozi": [
+        {
+          "id_negozio": 3,
+          "url_negozio" : "lapiada_shoppage.html",
+          "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+          "nome_negozio" : "La Piada",
+          "segmento" : "Piadineria",
+          "orario_consegna" : ["","19:45 - 21:30"],
+          "rating" : 4
+        }
+      ]
+    }
+  ],
+  "offerte_attive":"",
+  "segmenti_attivi":"",
+  "novita":""
+},
+{
+  "cap":"26012",
+  "comune" : [
+      {
+        "value": "Castelleone",
+          "abilitato" : 0,
+          "shipping_price" : "2",
+          "set_negozi" : [
+            {
+              "id_negozio": 3,
+              "url_negozio" : "lapiada_shoppage.html",
+              "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+              "nome_negozio" : "La Piada",
+              "segmento" : "Piadineria",
+              "orario_consegna" : ["","19:45 - 21:30"],
+              "rating" : 4
+            }
+          ]
+      }
+    ],
+  "offerte_attive":"",
+  "segmenti_attivi":"",
+  "novita":""
+  },
+  {
+  "cap":"26013",
+  "comune" : [
+      {
+        "value" : "Crema",
+        "abilitato" : 1,
+        "shipping_price" : "2",
+        "set_negozi" : [
+            {
+              "id_negozio": 1,
+              "url_negozio" : "behappy_shoppage.html",
+              "url_foto" : "behappy.jpg",
+              "nome_negozio" : "BeHappy",
+              "segmento" : "Hamburgeria",
+              "orario_consegna" : ["12:30 - 14:30","19:45 - 21:30"],
+              "rating" : 4
+            },
+            {
+              "id_negozio": 2,
+              "url_negozio" : "rosticceria_shoppage.html",
+              "url_foto" : "etnico.jpg",
+              "nome_negozio" : "AlaTurka",
+              "segmento" : "Etnico",
+              "orario_consegna" : ["12:30 - 14:30",""],
+              "rating" : 3
+            },
+            {
+              "id_negozio": 4,
+              "url_negozio" : "sanjo_shoppage.html",
+              "url_foto" : "sanjo.jpg",
+              "nome_negozio" : "Sanjo",
+              "segmento" : "Ristorante",
+              "orario_consegna" : ["12:30 - 14:30","19:45 - 21:30"],
+              "rating" : 4
+            },
+            {
+              "id_negozio": 5,
+              "url_negozio" : "bottegnino_shoppage.html",
+              "url_foto" : "il-botteghino-di-carancini.jpg",
+              "nome_negozio" : "Il Botteghino",
+              "segmento" : "Ristorante",
+              "orario_consegna" : ["","19:45 - 21:30"],
+              "rating" : 5
+            }
+          ],
+        "offerte_attive":"",
+        "segmenti_attivi":"",
+        "novita":""
+      }
+    ]
+  },
+  {
+    "cap":"26014",
+    "comune" : [
+        {
+          "value" : "Caseletto di sopra",
+          "abilitato" : 0,
+          "shipping_price" : "2",
+          "set_negozi" : [
+            {
+              "id_negozio": 3,
+              "url_negozio" : "lapiada_shoppage.html",
+              "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+              "nome_negozio" : "La Piada",
+              "segmento" : "Piadineria",
+              "orario_consegna" : ["","19:45 - 21:30"],
+              "rating" : 4
+            }
+        ]
+        },
+        {
+          "value" : "Romanengo",
+          "abilitato" : 0,
+          "shipping_price" : "2",
+          "set_negozi" : [
+            {
+              "id_negozio": 3,
+              "url_negozio" : "lapiada_shoppage.html",
+              "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+              "nome_negozio" : "La Piada",
+              "segmento" : "Piadineria",
+              "orario_consegna" : ["","19:45 - 21:30"],
+              "rating" : 4
+            }
+        ]
+        }
+      ],
+    "offerte_attive":"",
+    "segmenti_attivi":"",
+    "novita":""
+  },
+  {
+    "cap":"26015",
+    "comune" : [
+        {
+          "value" : "Soresina",
+          "abilitato" : 0,
+          "shipping_price" : "2",
+          "set_negozi" : [
+          {
+              "id_negozio": 3,
+              "url_negozio" : "lapiada_shoppage.html",
+              "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+              "nome_negozio" : "La Piada",
+              "segmento" : "Piadineria",
+              "orario_consegna" : ["","19:45 - 21:30"],
+              "rating" : 4
+            }
+        ]
+        }
+      ],
+    "offerte_attive":"",
+    "segmenti_attivi":"",
+    "novita":""
+  },
+  {
+    "cap":"26017",
+    "comune" : [
+      {
+        "value" : "Pieranica",
+          "abilitato" : 0,
+          "shipping_price" : "2",
+        "set_negozi" : [
+            {
+              "id_negozio": 3,
+              "url_negozio" : "lapiada_shoppage.html",
+              "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+              "nome_negozio" : "La Piada",
+              "segmento" : "Piadineria",
+              "orario_consegna" : ["","19:45 - 21:30"],
+              "rating" : 4
+            }
+          ]
+        },
+      {
+        "value" : "Quintano",
+          "abilitato" : 0,
+          "shipping_price" : "2",
+        "set_negozi" : [
+            {
+              "id_negozio": 3,
+              "url_negozio" : "lapiada_shoppage.html",
+              "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+              "nome_negozio" : "La Piada",
+              "segmento" : "Piadineria",
+              "orario_consegna" : ["","19:45 - 21:30"],
+              "rating" : 4
+            }
+          ]
+        },
+      {
+        "value" : "Torlino Vimercati",
+          "abilitato" : 0,
+          "shipping_price" : "2",
+        "set_negozi" : [
+            {
+              "id_negozio": 3,
+              "url_negozio" : "lapiada_shoppage.html",
+              "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+              "nome_negozio" : "La Piada",
+              "segmento" : "Piadineria",
+              "orario_consegna" : ["","19:45 - 21:30"],
+              "rating" : 4
+            }
+          ]
+        },
+      {
+        "value" : "Trescore Cremasco",
+          "abilitato" : 0,
+          "shipping_price" : "2",
+          "set_negozi" : [
+            {
+              "id_negozio": 3,
+              "url_negozio" : "lapiada_shoppage.html",
+              "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+              "nome_negozio" : "La Piada",
+              "segmento" : "Piadineria",
+              "orario_consegna" : ["","19:45 - 21:30"],
+              "rating" : 4
+            }
+          ]
+        }
+    ],
+    "offerte_attive":"",
+    "segmenti_attivi":"",
+    "novita":""
+  },
+  {
+    "cap":"26018",
+    "comune" : [
+        {
+          "value" : "Trigolo",
+          "abilitato" : 0,
+          "shipping_price" : "2",
+          "set_negozi" : [
+          {
+              "id_negozio": 3,
+              "url_negozio" : "lapiada_shoppage.html",
+              "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+              "nome_negozio" : "La Piada",
+              "segmento" : "Piadineria",
+              "orario_consegna" : ["","19:45 - 21:30"],
+              "rating" : 4
+            }
+        ]
+        }
+      ],
+    "offerte_attive":"",
+    "segmenti_attivi":"",
+    "novita":""
+  },
+  {
+    "cap":"26019",
+    "comune" : [
+        {
+          "value" : "Vailate",
+          "abilitato" : 0,
+          "shipping_price" : "2",
+          "set_negozi" : [
+          {
+              "id_negozio": 3,
+              "url_negozio" : "lapiada_shoppage.html",
+              "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+              "nome_negozio" : "La Piada",
+              "segmento" : "Piadineria",
+              "orario_consegna" : ["","19:45 - 21:30"],
+              "rating" : 4
+            }
+        ]
+        }
+      ],
+    "offerte_attive":"",
+    "segmenti_attivi":"",
+    "novita":""
+  },
+  {
+    "cap":"26020",
+    "comune" : [
+        {
+          "value" : "Agnadello",
+          "abilitato" : 0,
+          "shipping_price" : "2",
+          "set_negozi" : [
+          {
+              "id_negozio": 3,
+              "url_negozio" : "lapiada_shoppage.html",
+              "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+              "nome_negozio" : "La Piada",
+              "segmento" : "Piadineria",
+              "orario_consegna" : ["","19:45 - 21:30"],
+              "rating" : 4
+            }
+        ]
+        },
+        {
+          "value" : "Cumignano sul Naviglio",
+          "abilitato" : 0,
+          "shipping_price" : "2",
+          "set_negozi" : [
+          {
+              "id_negozio": 3,
+              "url_negozio" : "lapiada_shoppage.html",
+              "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+              "nome_negozio" : "La Piada",
+              "segmento" : "Piadineria",
+              "orario_consegna" : ["","19:45 - 21:30"],
+              "rating" : 4
+            }
+        ]
+        },
+        {
+          "value" : "Genivolta",
+          "abilitato" : 0,
+          "shipping_price" : "2",
+          "set_negozi" : [
+          {
+              "id_negozio": 3,
+              "url_negozio" : "lapiada_shoppage.html",
+              "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+              "nome_negozio" : "La Piada",
+              "segmento" : "Piadineria",
+              "orario_consegna" : ["","19:45 - 21:30"],
+              "rating" : 4
+            }
+        ]
+        },
+        {
+          "value" : "Gombito",
+          "abilitato" : 0,
+          "shipping_price" : "2",
+          "set_negozi" : [
+          {
+              "id_negozio": 3,
+              "url_negozio" : "lapiada_shoppage.html",
+              "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+              "nome_negozio" : "La Piada",
+              "segmento" : "Piadineria",
+              "orario_consegna" : ["","19:45 - 21:30"],
+              "rating" : 4
+            }
+        ]
+        },
+        {
+          "value" : "Madignano",
+          "abilitato" : 0,
+          "shipping_price" : "2",
+          "set_negozi" : [
+          {
+              "id_negozio": 3,
+              "url_negozio" : "lapiada_shoppage.html",
+              "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+              "nome_negozio" : "La Piada",
+              "segmento" : "Piadineria",
+              "orario_consegna" : ["","19:45 - 21:30"],
+              "rating" : 4
+            }
+        ]
+        },
+        {
+          "value" : "Palazzo Pignano",
+          "abilitato" : 0,
+          "shipping_price" : "2",
+          "set_negozi" : [
+          {
+              "id_negozio": 3,
+              "url_negozio" : "lapiada_shoppage.html",
+              "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+              "nome_negozio" : "La Piada",
+              "segmento" : "Piadineria",
+              "orario_consegna" : ["","19:45 - 21:30"],
+              "rating" : 4
+            }
+        ]
+        },
+        {
+          "value" : "Ticengo",
+          "abilitato" : 0,
+          "shipping_price" : "2",
+          "set_negozi" : [
+          {
+              "id_negozio": 3,
+              "url_negozio" : "lapiada_shoppage.html",
+              "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+              "nome_negozio" : "La Piada",
+              "segmento" : "Piadineria",
+              "orario_consegna" : ["","19:45 - 21:30"],
+              "rating" : 4
+            }
+        ]
+        }
+      ],
+    "offerte_attive":"",
+    "segmenti_attivi":"",
+    "novita":""
+  },
+  {
+    "cap":"26025",
+    "comune" : [
+      {"value" : "Pandino",
+          "abilitato" : 0,
+          "shipping_price" : "2",
+          "set_negozi" : [
+            {
+              "id_negozio": 3,
+              "url_negozio" : "lapiada_shoppage.html",
+              "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+              "nome_negozio" : "La Piada",
+              "segmento" : "Piadineria",
+              "orario_consegna" : ["","19:45 - 21:30"],
+              "rating" : 4
+            }
+          ]
+        }
+    ],
+    "offerte_attive":"",
+    "segmenti_attivi":"",
+    "novita":""
+  },
+  {
+    "cap":"26027",
+      "comune" : [
+        {
+          "value" : "Rivolta d'adda",
+          "abilitato" : 0,
+          "shipping_price" : "2",
+          "set_negozi" : [
+          {
+              "id_negozio": 3,
+              "url_negozio" : "lapiada_shoppage.html",
+              "url_foto" : "Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg",
+              "nome_negozio" : "La Piada",
+              "segmento" : "Piadineria",
+              "orario_consegna" : ["","19:45 - 21:30"],
+              "rating" : 4
+            }
+        ]
+        }
+      ],
+    "offerte_attive":"",
+    "segmenti_attivi":"",
+    "novita":""
+  }
+]

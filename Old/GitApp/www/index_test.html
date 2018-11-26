@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <script src="https://int-ecommerce.nexi.it/ecomm/XPayBuild/js?alias=ALIAS_WEB_00007136"></script>
+        <script type="text/javascript" src="sha1/src/sha1.js"></script>
+    </head>
+    <body>
+        <button id="btnPaga">Paga</button>
+
+        <script type='text/javascript'>
+        var date = new Date();
+        var calcoloMac= new jsSHA("SHA-1","TEXT");
+        console.log(calcoloMac);
+        calcoloMac.update("codTrans=APIBO_");
+        calcoloMac.update(date.getDate());
+        calcoloMac.update("divisa=EURimporto=50ZBXB4LH7V84E8SMGVJBOVHV1404KC8MP");
+        var Mac = calcoloMac.getHash("HEX");
+        console.log(date.getTime());
+            window.addEventListener('load', function () {
+                // Inizializzazione SDK
+                XPay.init();
+
+                // Oggetto contenente la configurazione del pagamento
+                var config = {
+                    baseConfig: {
+                        apiKey: 'ALIAS_WEB_00007136',
+                        enviroment: XPay.Environments.INTEG
+                    },
+                    paymentParams: {
+                        amount: '50',
+                        transactionId: 'APIBO_'+date.getDate(),
+                        currency: 'EUR',
+                        timeStamp: date.getTime(),
+                        mac: '7184b8deff409596a4b41c7454d2c51439215819'
+                    },
+                    customParams: {},
+                    language: XPay.LANGUAGE.ITA
+                };
+
+                // Configurazione lightbox
+                XPay.initLightbox(config);
+            });
+
+            document.getElementById('btnPaga').addEventListener('click', function (e) {
+                // Avvio del pagamento
+                XPay.openLightbox();
+            });
+
+            window.addEventListener("XPay_Payment_Result", function (event) {
+                alert(event.detail.messaggio);
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,913 @@
+var xhttp = new XMLHttpRequest();
+var Token = "Bearer rdsq33fe895u780tdbe2f0dlvc8o47tj";
+//prima chiamata recupero prodotto singolo
+function Cambiotesto(){
+    // xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        var data = this.responseText;
+        var jsonResponse = JSON.parse(data);
+        document.getElementById("nomeprod").innerHTML =
+            jsonResponse.name;
+        document.getElementById("price").innerHTML =
+            jsonResponse.price;
+        document.getElementById("info").innerHTML =
+            jsonResponse.custom_attributes[0].value;
+
+        };
+    xhttp.open("GET","https://food.localecom.it/Cremasco/index.php/rest/V1/products/PB004",true);
+    xhttp.setRequestHeader("Content-Type","application/json");
+    xhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
+    //Header inserire il token d'accesso dell'integrazione di magento
+    xhttp.setRequestHeader("Authorization", Token);
+    xhttp.send();
+}
+
+//Funzione recupero nomi categorie
+function NomeCate(id){
+    var link_menu ="";
+    var text_prodotti ="";
+    //var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (xhttp.readyState === XMLHttpRequest.DONE && xhttp.status === 200){
+                var data = this.responseText;
+                var jsonResponse = JSON.parse(data);
+                //console.log(jsonResponse.items.length);
+                for(var i=0; i < jsonResponse.items.length; i++){
+                    console.log("Nomecate lenght " + jsonResponse.items.length);
+                    if (i===0){
+                        console.log("Categoria IF: " + jsonResponse.items[i].name);
+                        link_menu += "<li class=\"nav-item\">" +
+                            "<a class=\"nav-link active\" id=\"pills-"+jsonResponse.items[i].id+"-tab\" data-toggle=\"pill\" href=\"#pills-" + jsonResponse.items[i].id + "\" role=\"tab\" aria-controls=\"pills-home\" aria-selected=\"true\" onclick=\"ProdCate("+jsonResponse.items[i].id+")\">" +
+                            jsonResponse.items[i].name + "</a></li>";
+                        text_prodotti +="<div class=\"tab-pane fade show active\" id=\"pills-"+ jsonResponse.items[i].id +"\" role=\"tabpanel\" aria-labelledby=\"pills-"+jsonResponse.items[i].id+"-tab\">\n" +
+
+                            "</div>";
+                        document.getElementById("pills-tab").innerHTML = link_menu;
+                        document.getElementById("pills-tabContent").innerHTML = text_prodotti;
+                        //ProdCate(jsonResponse.items[i].id);
+                    }else{
+                        console.log("Categoria Else:" + jsonResponse.items[i].name);
+                        link_menu += "<li class=\"nav-item\">" +
+                            "<a class=\"nav-link\" id=\"pills-"+jsonResponse.items[i].id+"-tab\" data-toggle=\"pill\" href=\"#pills-" + jsonResponse.items[i].id + "\" role=\"tab\" aria-controls=\"pills-home\" aria-selected=\"true\" onclick=\"ProdCate("+jsonResponse.items[i].id+")\">" +
+                            jsonResponse.items[i].name + "</a></li>";
+                        text_prodotti +="<div class=\"tab-pane fade show  \" id=\"pills-"+ jsonResponse.items[i].id +"\" role=\"tabpanel\" aria-labelledby=\"pills-"+jsonResponse.items[i].id+"-tab\">\n" +
+                            "<div id=\"blocco_prod\"></div>" +
+                            "</div>";
+                        //document.getElementById("pills-tabContent").innerHTML = text_prodotti;
+                        document.getElementById("pills-tab").innerHTML = link_menu;
+                        document.getElementById("pills-tabContent").innerHTML = text_prodotti;
+                        //ProdCate(jsonResponse.items[i].id);
+                        //console.log("ID passato a PRodCate:" + jsonResponse.items[i].id);
+                        //document.getElementById("pills-tab").innerHTML = link_menu;
+                        //ProdCate(jsonResponse.items[i].id);
+                    }
+                }
+            }else{
+                console.log("Richiesta non 200");
+            }
+        };
+    var Url= "https://food.localecom.it/Cremasco/index.php/rest/V1/categories/list?" +
+        "searchCriteria[filterGroups][0][filters][1][conditionType]=eq" +
+        "&searchCriteria[filterGroups][0][filters][1][field]=parent_id" +
+        "&searchCriteria[filterGroups][0][filters][1][value]=" + id;
+    //console.log(Url);
+    xhttp.open("GET",Url,true);
+    xhttp.setRequestHeader("Content-Type","application/json");
+    xhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
+    //Header inserire il token d'accesso dell'integrazione di magento
+    xhttp.setRequestHeader("Authorization", Token);
+    xhttp.send();
+}
+
+//Funzione recupero prodotti (per Categoria)
+function ProdCate(id){
+    //var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (xhttp.readyState === XMLHttpRequest.DONE && xhttp.status === 200){
+        var data = this.responseText;
+        var jsonResponse = JSON.parse(data);
+        //console.log(jsonResponse);
+        var i=0;
+        //var text_prodotti ="";
+        //console.log("ProdCate: " + jsonResponse[i].sku);
+            for(i=0;i < jsonResponse.length;i++){
+            //console.log(typeof(jsonResponse[i].sku))
+                    CambioTestoADV(jsonResponse[0].sku);
+                    console.log("Invio SKU:" + jsonResponse[0].sku);
+                    console.log("Lenght:" + jsonResponse.length);
+            //CambiotestoADV(wjsonResponse[i].sku);
+            //text += "<li class=\"nav-item\"><a class=\"nav-link\" id=\"pills-home-tab\" data-toggle=\"pill\" href=\"#pills-home\" role=\"tab\" aria-controls=\"pills-home\" aria-selected=\"true\">" +
+            //jsonResponse[i].sku + "</a></li>";
+            //document.getElementById("pills-tab").innerHTML = text;
+        }
+        //document.getElementById("pills-tabContent").innerHTML = text_prodotti;
+        }
+
+    };
+    var Url= "https://food.localecom.it/Cremasco/index.php/rest/V1/categories/" + id + "/products";
+    console.log(Url);
+    xhttp.open("GET",Url,true);
+    xhttp.setRequestHeader("Content-Type","application/json");
+    xhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
+    //Header inserire il token d'accesso dell'integrazione di magento
+    xhttp.setRequestHeader("Authorization", Token);
+    xhttp.send();
+}
+
+//Funziona avanzate recupero prodotti per categoria
+function CambioTestoADV(sku){
+    //var xhttp = new XMLHttpRequest();
+    console.log("CAMBIOTESTOADV: " + sku);
+    xhttp.onreadystatechange = function() {
+        if (xhttp.readyState === XMLHttpRequest.DONE && xhttp.status === 200) {
+            //console.log("On readystatechange: " + sku);
+            var data = this.responseText;
+            var jsonResponse = JSON.parse(data);
+                //var price = document.getElementById("price");
+                //var info = document.getElementById("info");
+                //console.log("Inner TExt: " + nomeprod);
+                //nomeprod.appendChild(jsonResponse.name);
+                //price.appendChild(jsonResponse.price);
+                //info.appendChild(jsonResponse.custom_attributes[1].value);
+                //console.log(jsonResponse.name + " " + jsonResponse.price + " " + jsonResponse.custom_attributes[1].value);
+            //var nomeprod = document.getElementById("nomeprod");
+            //nomeprod.innerHTML = jsonResponse.name;
+            //var nomeprod = document.getElementsByClassName("tab-pane");
+            // var checkPresenzaDiv = document.getElementById("blocco_prod");
+            // if( checkPresenzaDiv.innerHtml !== ""){
+            //     console.log("Div Pieno");
+            //     checkPresenzaDiv.innerHtml = "" +
+            //         "           <div class=\"list-group\">\n" +
+            //         "                <a href=\"#\" class=\"list-group-item list-group-item-action flex-column align-items-start active\">\n" +
+            //         "                    <div class=\"d-flex w-100 justify-content-between\">\n" +
+            //         "                        <h5 class=\"mb-1\" id='\"nomeprod\"'>"+ jsonResponse.name +"</h5>\n" +
+            //         "                        <small id='\"price\"'>"+jsonResponse.price+"</small>\n" +
+            //         "                        <img src=\"https://food.localecom.it/Cremasco/pub/media/catalog/product/"+jsonResponse.custom_attributes[5].value+"\">\n" +
+            //         "                    </div>\n" +
+            //         "                    <p class=\"mb-1\" id='\"info\"'>"+jsonResponse.custom_attributes[1].value+"</p>" +
+            //         "                    <small>\n" +
+            //         "                       <button type=\"button\" class=\"btn btn-info\" id=\""+jsonResponse.sku+"\">Acquista</button>\n" +
+            //         "                    </small>\n" +
+            //         "                </a>\n" +
+            //         "            </div>\n";
+            // }else {
+            //     console.log("Div Vuoto");
+            //     var descProdTab = document.createElement('div');
+            //     descProdTab.setAttribute("id", "blocco_prod");
+            //     descProdTab.innerHTML = "" +
+            //         "           <div class=\"list-group\">\n" +
+            //         "                <a href=\"#\" class=\"list-group-item list-group-item-action flex-column align-items-start active\">\n" +
+            //         "                    <div class=\"d-flex w-100 justify-content-between\">\n" +
+            //         "                        <h5 class=\"mb-1\" id='\"nomeprod\"'>"+ jsonResponse.name +"</h5>\n" +
+            //         "                        <small id='\"price\"'>"+jsonResponse.price+"</small>\n" +
+            //         "                        <img src=\"https://food.localecom.it/Cremasco/pub/media/catalog/product/"+jsonResponse.custom_attributes[5].value+"\">\n" +
+            //         "                    </div>\n" +
+            //         "                    <p class=\"mb-1\" id='\"info\"'>"+jsonResponse.custom_attributes[1].value+"</p>" +
+            //         "                    <small>\n" +
+            //         "                       <button type=\"button\" class=\"btn btn-info\" id=\""+jsonResponse.sku+"\">Acquista</button>\n" +
+            //         "                    </small>\n" +
+            //         "                </a>\n" +
+            //         "            </div>\n";
+            //     var TabContainProd = document.getElementById("pills-tabContent");
+            //     TabContainProd.appendChild(descProdTab);
+            // }
+            var descProdTab = document.createElement('div');
+            descProdTab.setAttribute("id", "blocco_prod");
+            descProdTab.innerHTML = "" +
+                //"           <div class=\"list-group\">\n" +
+                //"                <a href=\"#\" class=\"list-group-item list-group-item-action flex-column align-items-start active\">\n" +
+                // "                    <div class=\"d-flex w-100 justify-content-between\">\n" +
+                // "                        <h5 class=\"mb-1\" id='\"nomeprod\"'>"+ jsonResponse.name +"</h5>\n" +
+                // "                        <small id='\"price\"'>"+jsonResponse.price+"</small>\n" +
+                // "                        <img src=\"https://food.localecom.it/Cremasco/pub/media/catalog/product/"+jsonResponse.custom_attributes[5].value+"\">\n" +
+                // "                    </div>\n" +
+                // "                    <p class=\"mb-1\" id='\"info\"'>"+jsonResponse.custom_attributes[1].value+"</p>" +
+                // "                    <small>\n" +
+                // "                       <button type=\"button\" class=\"btn btn-info\" id=\""+jsonResponse.sku+"\">Acquista</button>\n" +
+                // "                    </small>\n" +
+                "<div class=\"card\" style=\"width: 18rem;\">\n" +
+                "  <img class=\"card-img-top\" src=\"https://food.localecom.it/Cremasco/pub/media/catalog/product/"+jsonResponse.media_gallery_entries[0].file+"\"alt=\"Card image cap\">\n" +
+                "  <div class=\"card-body\">\n" +
+                "    <h5 class=\"card-title\">"+jsonResponse.name+" - "+jsonResponse.price+"&euro;</h5>\n" +
+                "    <p class=\"card-text\">"+jsonResponse.custom_attributes[1].value+"</p>\n" +
+                "<form name=\"addToCart\" method=\"post\">" +
+                "<input type=\"hidden\" value=\""+jsonResponse.sku+"\" name=\"sku\" id=\"sku\">"+
+                "    <button type=\"button\" class=\"btn btn-primary\" onclick=\"AddToCart()\">Go somewhere</button>\n" +
+                "  </div>\n" +
+                "</div>" ;
+                //"                </a>\n" +
+                //"            </div>\n";
+            var TabContainProd = document.getElementById("pills-tabContent");
+            //TabContainProd.appendChild(descProdTab);
+            TabContainProd.innerHTML = "<div class=\"card\" style=\"width: 18rem;\">\n" +
+                "  <img class=\"card-img-top\" src=\"https://food.localecom.it/Cremasco/pub/media/catalog/product/"+jsonResponse.media_gallery_entries[0].file+"\"alt=\"Card image cap\">\n" +
+                "  <div class=\"card-body\">\n" +
+                "    <h5 class=\"card-title\">"+jsonResponse.name+" - "+jsonResponse.price+"&euro;</h5>\n" +
+                "    <p class=\"card-text\">"+jsonResponse.custom_attributes[1].value+"</p>\n" +
+                "<form name=\"addToCart\" method=\"post\">" +
+                "<input type=\"hidden\" name=\"sku\" id=\"sku\" value=\""+jsonResponse.sku+"\">" +
+                "    <button type=\"button\" class=\"btn btn-primary\" onclick=\"AddToCart()\">Go somewhere</button>\n" +
+                "</form>"+
+                "  </div>\n" +
+                "</div>" ;
+            console.log("https://food.localecom.it/Cremasco/pub/media/catalog/product/"+jsonResponse.media_gallery_entries[0].file);
+            //nomeprod.appendChild(text_prodotti);
+            //console.log(document.getElementsByClassName("tab-pane").innerHTML);
+            }
+    };
+    var Url= "https://food.localecom.it/Cremasco/index.php/rest/V1/products/"+ sku;
+    //console.log(Url);
+    xhttp.open("GET",Url,true);
+    xhttp.setRequestHeader("Content-Type","application/json");
+    xhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
+    //Header inserire il token d'accesso dell'integrazione di magento
+    xhttp.setRequestHeader("Authorization", Token);
+    xhttp.send();
+}
+
+
+function ValidateAddress(){
+    var x = document.forms.convalidaAddress.inputAddress.value;
+    if (x !== "") {
+        window.location.href ='/result.html';
+        window.localStorage.setItem("indirizzo_consegna", x);
+        return true;
+    }else{
+        navigator.notification.alert("Inserisci una via");
+        return false;
+    }
+}
+//funzione test accesso
+function init() {
+    document.addEventListener("deviceready", deviceReady, true);
+    //delete init;
+}
+function checkPreAuth() {
+    var form = $("#loginForm");
+    if(window.localStorage.username !== undefined && window.localStorage.password !== undefined) {
+        $("#username", form).val(window.localStorage.username);
+        $("#password", form).val(window.localStorage.password);
+        handleLogin();
+    }else{
+        console.log("No storage data");
+    }
+}
+
+function handleLogin() {
+    var form = $("#loginForm");
+    //disable the button so we can't resubmit while we wait
+    $("#submitButton",form).attr("disabled","disabled");
+    var u = $("#username", form).val();
+    var p = $("#password", form).val();
+    console.log("click");
+    if(u !== '' && p!== '') {
+        $.post("https://localecom.it/Cremasco/index.php/rest/V1/integration/customer/token", {
+            username: u,
+            password: p
+        }, function (res) {
+            if (res === true) {
+                //store
+                window.localStorage.username = u;
+                window.localStorage.password = p;
+                $.mobile.changePage("index.html");
+                navigator.notification.alert("Username corretto");
+            } else {
+                navigator.notification.alert("Your login failed", function () {
+                });
+            }
+            $("#submitButton").removeAttr("disabled");
+        }, "json");
+    } else {
+        //Thanks Igor!
+        navigator.notification.alert("You must enter a username and password", function() {});
+        $("#submitButton").removeAttr("disabled");
+    }
+    return false;
+}
+
+function deviceReady() {
+
+    $("#loginForm").on("submit",handleLogin);
+
+}
+//Contatore
+var input = 0;
+
+function ControlloStoredCredential(){
+    var username_stored = window.localStorage.getItem("username");
+    var password_stored = window.localStorage.getItem("password");
+    if (username_stored !== undefined && password_stored !== undefined){
+        console.log("Credenziali presenti");
+        return input + 1;
+    }else{
+        console.log("Credenziali non presenti");
+        return input;
+    }
+}
+function TokenUtente () {
+    //recupero variabili da localStorage
+    //var username_stored = window.localStorage.getItem("username");
+    //var password_stored = window.localStorage.getItem("password");
+    //recupero variabili da form
+    var username = document.loginForm.username.value;
+    var password = document.loginForm.password.value;
+    //Se esistono le variabili in localStorage
+    // if (username_stored !== null && password_stored !== null) {
+    //     //Se sono già storate le credenziali allora accedi e recupera token in automatico
+    //     //var xhttp = new XMLHttpRequest();
+    //     xhttp.onreadystatechange = function () {
+    //         if (xhttp.readyState === XMLHttpRequest.DONE && xhttp.status === 200) {
+    //             var data = this.responseText;
+    //             var jsonResponse = JSON.parse(data);
+    //             console.log(jsonResponse);
+    //             document.getElementById("sezione-utente").innerHTML = "" +
+    //                 "<div class=\"jumbotron jumbotron-fluid\">\n" +
+    //                 "        <div class=\"container\">\n" +
+    //                 "            <h3 class=\"display-5\">" + jsonResponse + "</h3>\n" +
+    //                 "            <p class=\"lead\">Gestisci le tue impostazioni e i tuoi ordini</p>\n" +
+    //                 "        </div>\n" +
+    //                 "    </div>";
+    //             alert("Accesso tramite dati salvati");
+    //         } else {
+    //             alert("nome utente o password errata");
+    //         }
+    //     };
+    //     //var username = document.loginForm.username.value;
+    //     //window.localStorage.setItem("username", document.loginForm.username.value);
+    //     //window.localStorage.setItem("password", document.loginForm.password.value);
+    //     //var password = document.loginForm.password.value;
+    //     //window.localStorage.password = password;
+    //     console.log("STORE: " + username_stored + " " + password_stored);
+    //     var Url = "https://food.localecom.it/Cremasco/index.php/rest/V1/integration/customer/token";
+    //     var credenziali = {"username": username_stored, "password": password_stored};
+    //     xhttp.open("POST", Url, true);
+    //     xhttp.setRequestHeader("Content-Type", "application/json");
+    //     xhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
+    //     //Header inserire il token d'accesso dell'integrazione di magento
+    //     xhttp.send(JSON.stringify(credenziali));
+    // } else {
+        //if (username !== undefined && password !== undefined){
+            //var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState === XMLHttpRequest.DONE && xhttp.status === 200) {
+                    var data = this.responseText;
+                    var jsonResponse = JSON.parse(data);
+                   //console.log(jsonResponse);
+                   //document.getElementById("sezione-utente").innerHTML = "" +
+                   //    "<div class=\"jumbotron jumbotron-fluid\">\n" +
+                   //    "        <div class=\"container\">\n" +
+                   //    "            <h3 class=\"display-5\">" + jsonResponse + "</h3>\n" +
+                   //    "            <p class=\"lead\">Gestisci le tue impostazioni e i tuoi ordini</p>\n" +
+                   //    "        </div>\n" +
+                   //    "    </div>";
+                    //alert("Accesso tramite dati Form");
+                    //Se la riechiesta del token va a buon fine storaggio le credenziali
+                    window.localStorage.setItem("username", username);
+                    window.localStorage.setItem("password", password);
+                    window.localStorage.setItem("token_cliente", "Bearer " + jsonResponse);
+                    //var urlRef =  window.location.href;
+                    //console.log(urlRef);
+                    window.location.reload();
+                    //if (urlRef === "file:///android_asset/www/account.html"){
+                        //window.location.href= urlRef;
+                    //}
+                }
+            };
+                //window.localStorage.password = password;
+                //console.log("DOPO COMPILAZIONE FORM : " + username + " " + password);
+                var Url = "https://food.localecom.it/Cremasco/index.php/rest/V1/integration/customer/token";
+                var credenziali = {"username": username, "password": password};
+                xhttp.open("POST", Url, true);
+                xhttp.setRequestHeader("Content-Type", "application/json");
+                xhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
+                //Header inserire il token d'accesso dell'integrazione di magento
+                xhttp.send(JSON.stringify(credenziali));
+
+        // }else{
+        //     //var xhttp = new XMLHttpRequest();
+        //     xhttp.onreadystatechange = function () {
+        //         if (xhttp.readyState === XMLHttpRequest.DONE && xhttp.status === 200) {
+        //             var data = this.responseText;
+        //             var jsonResponse = JSON.parse(data);
+        //             console.log(jsonResponse);
+        //             document.getElementById("sezione-utente").innerHTML = "" +
+        //                 "<div class=\"jumbotron jumbotron-fluid\">\n" +
+        //                 "        <div class=\"container\">\n" +
+        //                 "            <h3 class=\"display-5\">Account Personale</h3>\n" +
+        //                 "            <p class=\"lead\">Accedi per visualizzare i tuoi ordini e gestire il tuo profilo</p>\n" +
+        //                 "        </div>\n" +
+        //                 "    </div>\n" +
+        //                 "    <form id=\"loginForm\" name=\"loginForm\" method=\"post\" >\n" +
+        //                 "        <div class=\"form-group\">\n" +
+        //                 "            <label for=\"username\">Email</label>\n" +
+        //                 "            <input type=\"email\" class=\"form-control\" id=\"username\" name=\"username\" aria-describedby=\"emailHelp\" placeholder=\"Inserisci Email\">\n" +
+        //                 "        </div>\n" +
+        //                 "        <div class=\"form-group\">\n" +
+        //                 "            <label for=\"password\">Password</label>\n" +
+        //                 "            <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\" placeholder=\"Password\">\n" +
+        //                 "        </div>\n" +
+        //                 "        <div class=\"form-group form-check\">\n" +
+        //                 "            <input type=\"checkbox\" class=\"form-check-input\" id=\"exampleCheck1\">\n" +
+        //                 "            <label class=\"form-check-label\" for=\"exampleCheck1\">Ricordami</label>\n" +
+        //                 "        </div>\n" +
+        //                 "        <button type=\"button\" class=\"btn btn-primary\" id=\"submitButton\" name=\"submitButton\" onclick=\"TokenUtente()\">Accedi</button>\n" +
+        //                 "        <small id=\"emailHelp\" class=\"form-text text-muted\"><a href=\"contatti.html\">Problemi con l'accesso?</a></small>\n" +
+        //                 "        <small id=\"emailHelp2\" class=\"form-text text-muted\"><a href=\"contatti.html\">Password dimenticata?</a></small>\n" +
+        //                 "    </form>";
+        //             window.localStorage.setItem("username", username);
+        //             window.localStorage.setItem("password", password);
+        //         }
+        //         //window.localStorage.password = password;
+        //         console.log("PRIMA COMPILAZIONE FORM: " + username + " " + password);
+        //         var Url = "https://food.localecom.it/Cremasco/index.php/rest/V1/integration/customer/token";
+        //         var credenziali = {"username": username, "password": password};
+        //         xhttp.open("POST", Url, true);
+        //         xhttp.setRequestHeader("Content-Type", "application/json");
+        //         xhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
+        //         //Header inserire il token d'accesso dell'integrazione di magento
+        //         xhttp.send(JSON.stringify(credenziali));
+        //     };
+        // }
+        //se non sono storaggiate visualizzare form
+     //}
+}
+
+//funzione ridondante utilizzare solo TokenUtente()
+function TokenCart(){
+    var username = window.localStorage.getItem("username");
+    var password = window.localStorage.getItem("password");
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (xhttp.readyState === XMLHttpRequest.DONE && xhttp.status === 200) {
+            var data = this.responseText;
+            var jsonResponse = JSON.parse(data);
+            window.localStorage.setItem("token_cliente", "Bearer " + jsonResponse);
+        }
+    };
+    var Url = "https://food.localecom.it/Cremasco/index.php/rest/V1/integration/customer/token";
+    var credenziali = {"username": username, "password": password};
+    xhttp.open("POST", Url, true);
+    xhttp.setRequestHeader("Content-Type", "application/json");
+    xhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
+    //Header inserire il token d'accesso dell'integrazione di magento
+    xhttp.send(JSON.stringify(credenziali));
+}
+
+function CreateIdCart () {
+    TokenCart();
+    var token_cliente = window.localStorage.getItem("token_cliente");
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (xhttp.readyState === XMLHttpRequest.DONE && xhttp.status === 200) {
+            //Stampa a video del carrello
+            var data = this.responseText;
+            var jsonResponse = JSON.parse(data);
+            window.localStorage.setItem("id_carrello", jsonResponse);
+        }
+    };
+        var Url = "https://food.localecom.it/Cremasco/index.php/rest/default/V1/carts/mine";
+        xhttp.open("POST", Url, true);
+        xhttp.setRequestHeader("Content-Type", "application/json");
+        xhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
+        xhttp.setRequestHeader("Authorization", token_cliente);
+        //Header inserire il token d'accesso dell'integrazione di magento
+        xhttp.send();
+}
+
+function CreateUtente(){
+    var username = document.registrazioneForm.username.value;
+    var password = document.registrazioneForm.password.value;
+    var nome = document.registrazioneForm.name.value;
+    var cognome = document.registrazioneForm.cognome.value;
+    var indirizzo = document.registrazioneForm.inputAddress.value;
+    var address_array = indirizzo.split(",");
+    var telefono = document.registrazioneForm.telefono.value;
+    xhttp.onreadystatechange = function () {
+        if (xhttp.readyState === XMLHttpRequest.DONE && xhttp.status === 200) {
+            //se la richiesta va a buon fine salvare i dati dell'utente
+            window.localStorage.setItem("username", username);
+            window.localStorage.setItem("password", password);
+            window.localStorage.setItem("nome", nome);
+            window.localStorage.setItem("cognome", cognome);
+            window.localStorage.setItem("username", username);
+            window.localStorage.setItem("indirizzo_consegna", indirizzo);
+            navigator.notification.alert("Utente creato con successo conferma la tua mail");
+            window.location="account.html";
+        }else{
+            var data = this.responseText;
+            var jsonResponse = JSON.parse(data);
+            var message = jsonResponse.message;
+            var correct_message = message.replace("%1", jsonResponse.parameters);
+            navigator.notification.alert(correct_message);
+        }
+    };
+    var Url = "https://food.localecom.it/Cremasco/index.php/rest/default/V1/customers";
+    var userInfo = {
+        "customer": {
+            "email": username,
+            "firstname": nome,
+            "lastname": cognome,
+            "addresses": [{
+                "defaultShipping": true,
+                "defaultBilling": true,
+                "firstname": nome,
+                "lastname": cognome,
+                "postcode": "10755",
+                "street": [address_array[0] + " " + address_array[1]],
+                "city": address_array[2],
+                "telephone": telefono,
+                "countryId": address_array[3]
+            }]
+        },
+        "password": password
+    };
+    xhttp.open("POST", Url, true);
+    xhttp.setRequestHeader("Content-Type", "application/json");
+    xhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
+    //Header inserire il token d'accesso dell'integrazione di magento
+    xhttp.send(JSON.stringify(userInfo));
+}
+
+function disconnettiUtente() {
+    //con il logout rimuovo i token associati all'utente precendente
+    window.localStorage.removeItem("username");
+    window.localStorage.removeItem("password");
+    window.localStorage.removeItem("nome");
+    window.localStorage.removeItem("cognome");
+    window.localStorage.removeItem("username");
+    window.localStorage.removeItem("indirizzo_consegna");
+    window.localStorage.removeItem("token_cliente");
+    window.localStorage.removeItem("id_carrello");
+    window.location = "account.html";
+}
+
+function AddToCart() {
+    var sku_prod = document.addToCart.sku.value;
+    var token_cliente = window.localStorage.getItem("token_cliente");
+    if (!token_cliente){
+        //ricreo il token utente se non è presente o se è scaduto
+        TokenCart();
+        token_cliente = window.localStorage.getItem("token_cliente");
+    }
+    var id_cart = window.localStorage.getItem("id_carrello");
+    if (!id_cart){
+        //ricreo l'id carello in modo da associare sempre l'id corretto all'utente
+        CreateIdCart();
+        id_cart = window.localStorage.getItem("id_carrello");
+    }
+    var qty = 1;
+    //var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (xhttp.readyState === XMLHttpRequest.DONE && xhttp.status === 200) {
+            //Stampa a video del carrello
+            var data = this.responseText;
+            var jsonResponse = JSON.parse(data);
+            console.log("Abbiamo aggiunto: "+ jsonResponse.name + " al carrello");
+            navigator.notification.alert("Abbiamo aggiunto: "+ jsonResponse.name + " al carrello");
+        }
+    };
+    var Url = "https://food.localecom.it/Cremasco/index.php/rest/default/V1/carts/mine/items";
+    var bodyCartInfo = {
+        "cartItem": {
+            "sku": sku_prod,
+            "qty": qty,
+            "quote_id": id_cart
+        }
+    };
+    xhttp.open("POST", Url, true);
+    xhttp.setRequestHeader("Content-Type", "application/json");
+    xhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
+    xhttp.setRequestHeader("Authorization", token_cliente);
+    //Header inserire il token d'accesso dell'integrazione di magento
+    xhttp.send(JSON.stringify(bodyCartInfo));
+}
+
+function ListCartItems(){
+    TokenCart();
+    var token_cliente = window.localStorage.getItem("token_cliente");
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (xhttp.readyState === XMLHttpRequest.DONE && xhttp.status === 200) {
+            //Stampa a video del carrello
+            var data = this.responseText;
+            var jsonResponse = JSON.parse(data);
+            var list_itemsCart = "";
+            var i = 0;
+            for (i=0;i < jsonResponse.length; i++){
+                var subtot = jsonResponse[i].price * jsonResponse[i].qty;
+                list_itemsCart += "<li class=\"list-group-item\">"+jsonResponse[i].name+" - "+ subtot +"&euro; <span style=\"float: right;\">"+jsonResponse[i].qty+"</span></li>";
+                //console.log(list_itemsCart);
+                document.getElementById("section-items-cart").innerHTML= list_itemsCart;
+            }
+        }
+    };
+    var Url = "https://food.localecom.it/Cremasco/index.php/rest/default/V1/carts/mine/items";
+    xhttp.open("GET", Url, true);
+    xhttp.setRequestHeader("Content-Type", "application/json");
+    xhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
+    xhttp.setRequestHeader("Authorization", token_cliente);
+    //Header inserire il token d'accesso dell'integrazione di magento
+    xhttp.send();
+}
+
+function GetShippingMethod(){
+    //token client sempre aggiornato e corretto
+    TokenCart();
+    CreateIdCart();
+    var id_address = window.localStorage.getItem("address_id");
+    var id_cart = window.localStorage.getItem("id_carrello");
+    var token_cliente = window.localStorage.getItem("token_cliente");
+    console.log("T: " + token_cliente + " C: " + id_cart + " A: " + id_address);
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (xhttp.readyState === XMLHttpRequest.DONE && xhttp.status === 200) {
+            //Stampa a video del carrello
+            var data = this.responseText;
+            var jsonResponse = JSON.parse(data);
+            var list_ShippingMethods = "";
+            var i = 0;
+            for (i=0;i < jsonResponse.length; i++){
+                list_ShippingMethods += "<li class=\"list-group-item\">" +
+                    ""+jsonResponse[i].carrier_title+" - "+ jsonResponse[i].method_title +" "+jsonResponse[i].amount +"&euro; " +
+                    "<input " +
+                    "type=\"radio\" " +
+                    "name=\"shipping\" " +
+                    "value=\""+jsonResponse[i].method_code+"-"+jsonResponse[i].carrier_code+"\" " +
+                    "onclick=\"StoreShipping('"+jsonResponse[i].method_code+"-"+jsonResponse[i].carrier_code+"-"+jsonResponse[i].method_title+"');\">" +
+                    "</li>";
+                //console.log(list_ShippingMethods);
+                document.getElementById("section-shipping-methods").innerHTML= list_ShippingMethods;
+            }
+        }
+    };
+
+    var Url = "https://food.localecom.it/Cremasco/index.php/rest/default/V1/carts/mine/estimate-shipping-methods";
+    var body_request = {  "address": {
+            "region": "Cremona",
+            "region_id": 0,
+            "region_code": "CR",
+            "country_id": "IT",
+            "street": [
+                "Viale europa 61"
+            ],
+            "postcode": "26013",
+            "city": "Crema",
+            "firstname": "Mohammed",
+            "lastname": "Ali",
+            "customer_id": 1,
+            "email": "jdoe@example.com",
+            "telephone": "(512) 555-1111",
+            "same_as_billing": 1
+        }
+    };
+    xhttp.open("POST", Url, true);
+    xhttp.setRequestHeader("Content-Type", "application/json");
+    xhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
+    xhttp.setRequestHeader("Authorization", token_cliente);
+    //Header inserire il token d'accesso dell'integrazione di magento
+    xhttp.send(JSON.stringify(body_request));
+}
+function StoreShipping(daSplittare){
+    window.localStorage.removeItem("carrier_code");
+    window.localStorage.removeItem("method_code");
+    var shipping_stored = daSplittare.split("-");
+    console.log(shipping_stored[0] + " spazio "+ shipping_stored[1]);
+    window.localStorage.setItem("carrier_code",shipping_stored[1]);
+    window.localStorage.setItem("method_code",shipping_stored[0]);
+    window.localStorage.setItem("orario_consegna",shipping_stored[2]);
+    var carrier_code = window.localStorage.getItem("carrier_code");
+    var method_code = window.localStorage.getItem("method_code");
+    console.log(carrier_code + " spazio " + method_code);
+}
+
+function GetPaymentsMethod(){
+    //token client sempre aggiornato e corretto
+    TokenCart();
+    var token_cliente = window.localStorage.getItem("token_cliente");
+    var carrier_code = window.localStorage.getItem("carrier_code");
+    var method_code = window.localStorage.getItem("method_code");
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (xhttp.readyState === XMLHttpRequest.DONE && xhttp.status === 200) {
+            //Stampa a video del carrello
+            var data = this.responseText;
+            var jsonResponse = JSON.parse(data);
+            var list_PaymentMethods = "";
+            var i = 0;
+            document.getElementById("total-sales").innerHTML= "Totale: "+jsonResponse.totals.grand_total+" &euro; - Consegna Ore: "+ window.localStorage.getItem("orario_consegna");
+            for (i=0;i < jsonResponse.payment_methods.length; i++){
+                list_PaymentMethods += "<li class=\"list-group-item\">"+jsonResponse.payment_methods[i].title+" <input type=\"radio\" name=\"payments\" value=\""+jsonResponse.payment_methods[i].code+"\"></li>";
+                //console.log(list_PaymentMethods);
+                document.getElementById("section-payments-methods").innerHTML= list_PaymentMethods;
+            }
+        }
+    };
+    var Url = "https://food.localecom.it/Cremasco/index.php/rest/default/V1/carts/mine/shipping-information";
+    var body_request = {  "addressInformation": {
+            "shipping_address": {
+                "region": "Cremona",
+                "region_id": 0,
+                "region_code": "CR",
+                "country_id": "IT",
+                "street": [
+                    "Viale europa 61"
+                ],
+                "postcode": "26013",
+                "city": "Crema",
+                "firstname": "Mohammed",
+                "lastname": "ali",
+                "email": "jdoe@example.com",
+                "telephone": "512-555-1111"
+            },
+            "billing_address": {
+                "region": "Cremona",
+                "region_id": 0,
+                "region_code": "CR",
+                "country_id": "IT",
+                "street": [
+                    "Viale europa 61"
+                ],
+                "postcode": "26013",
+                "city": "Crema",
+                "firstname": "Mohammed",
+                "lastname": "Alì",
+                "email": "jdoe@example.com",
+                "telephone": "512-555-1111"
+            },
+            "shipping_carrier_code": carrier_code,
+            "shipping_method_code": method_code
+        }
+    };
+    xhttp.open("POST", Url, true);
+    xhttp.setRequestHeader("Content-Type", "application/json");
+    xhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
+    xhttp.setRequestHeader("Authorization", token_cliente);
+    //Header inserire il token d'accesso dell'integrazione di magento
+    xhttp.send(JSON.stringify(body_request));
+}
+
+function UserInfo(){
+    //token client sempre aggiornato e corretto
+
+}
+
+function HandleAccountPage(){
+    //var checkStoreCrede = ControlloStoredCredential();
+    var username_stored = window.localStorage.getItem("username");
+    var password_stored = window.localStorage.getItem("password");
+    if (username_stored !== null && password_stored !== null){
+        var token_cliente = window.localStorage.getItem("token_cliente");
+        if (!token_cliente){
+            TokenCart();
+        }
+        //var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (xhttp.readyState === XMLHttpRequest.DONE && xhttp.status === 200) {
+                //Stampa a video del carrello
+                var data = this.responseText;
+                var jsonResponse = JSON.parse(data);
+                var i = 0;
+                //var userinfo = "";
+                //for (i=0;i < jsonResponse.length; i++){
+                var address_id = jsonResponse.addresses[0].id;
+                var customer_id = jsonResponse.addresses[0].customer_id;
+                var nome = jsonResponse.firstname;
+                var cognome = jsonResponse.lastname;
+                window.localStorage.setItem("address_id", address_id);
+                window.localStorage.setItem("customer_id", customer_id);
+                window.localStorage.setItem("nome", nome);
+                window.localStorage.setItem("cognome", cognome);
+                window.localStorage.setItem("indirizzo_consegna", jsonResponse.addresses[0].street+", "+jsonResponse.addresses[0].city);
+                //userinfo += "<li class=\"list-group-item\">"+jsonResponse.firstname+"</li>";
+                //document.getElementById("user-info").innerHTML= userinfo;
+                //}
+                var name_stored = window.localStorage.getItem("nome");
+                var cognome_stored = window.localStorage.getItem("cognome");
+                document.getElementById("sezione-utente").innerHTML = "" +
+                    "<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Benvenuto "+name_stored+" "+cognome_stored+"</h3>\n" +
+                    "            <p class=\"lead\">Gestisci le tue impostazioni e i tuoi ordini</p>\n" +
+                    "        </div>\n" +
+                    "    </div>" +
+                    "<div>" +
+                    "<ul class=\"list-group\" id=\"user-info\">" +
+                    "<li class=\"list-group-item\">"+jsonResponse.email+"</li>\n" +
+                    "<li class=\"list-group-item\">"+jsonResponse.addresses[0].street+", "+jsonResponse.addresses[0].city+"</li>\n" +
+                    "<li class=\"list-group-item\">Gestisci Ordini</li>\n" +
+                    "<li class=\"list-group-item\"><a href=\"#\" onclick=\"disconnettiUtente()\">Esci</a></li>" +
+                    "</ul>" +
+                    "</div>";
+            }else{
+                TokenCart();
+            }
+        };
+        var Url = "https://food.localecom.it/Cremasco/index.php/rest/V1/customers/me";
+        xhttp.open("GET", Url, true);
+        xhttp.setRequestHeader("Content-Type", "application/json");
+        xhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
+        xhttp.setRequestHeader("Authorization", token_cliente);
+        //Header inserire il token d'accesso dell'integrazione di magento
+        xhttp.send();
+        //alert("Accesso tramite dati Form");
+    }else{
+        document.getElementById("sezione-utente").innerHTML = "<div class=\"jumbotron jumbotron-fluid\">\n" +
+            "            <div class=\"container\">\n" +
+            "                <h3 class=\"display-5\">Account Personale</h3>\n" +
+            "                <p class=\"lead\">Accedi per visualizzare i tuoi ordini e gestire il tuo profilo</p>\n" +
+            "            </div>\n" +
+            "        </div>\n" +
+            "      <form id=\"loginForm\" name=\"loginForm\" method=\"post\" >\n" +
+            "           <div class=\"form-group\">\n" +
+            "                   <label for=\"username\">Email</label>\n" +
+            "                  <input type=\"email\" class=\"form-control\" id=\"username\" name=\"username\" aria-describedby=\"emailHelp\" placeholder=\"Inserisci Email\">\n" +
+            "              </div>\n" +
+            "          <div class=\"form-group\">\n" +
+            "                  <label for=\"password\">Password</label>\n" +
+            "                  <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\" placeholder=\"Password\">\n" +
+            "               </div>\n" +
+            "            <div class=\"form-group form-check\">\n" +
+            "                <input type=\"checkbox\" class=\"form-check-input\" id=\"exampleCheck1\">\n" +
+            "                <label class=\"form-check-label\" for=\"exampleCheck1\">Ricordami</label>\n" +
+            "            </div>\n" +
+            "            <button type=\"button\" class=\"btn btn-primary\" id=\"submitButton\" name=\"submitButton\" onclick=\"TokenUtente()\">Accedi</button>\n" +
+            "            <button type=\"button\" class=\"btn btn-primary\" id=\"RegistrazioneButton\" name=\"submitButton\" onclick=\"window.location='registrati.html'\">Registrati</button>\n" +
+            "            <small id=\"emailHelp\" class=\"form-text text-muted\"><a href=\"contatti.html\">Problemi con l'accesso?</a></small>\n" +
+            "            <small id=\"emailHelp2\" class=\"form-text text-muted\"><a href=\"contatti.html\">Password dimenticata?</a></small>\n" +
+            "      </form>";
+    }
+}
+
+function PlaceOrder(){
+    var pagamento = document.formOrdine.payments.value;
+    TokenCart();
+    var token_cliente = window.localStorage.getItem("token_cliente");
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (xhttp.readyState === XMLHttpRequest.DONE && xhttp.status === 200) {
+            //Stampa a video del carrello
+            var data = this.responseText;
+            var jsonResponse = JSON.parse(data);
+            navigator.notification.alert("Il tuo ordine N:"+jsonResponse+" è stato effettuato! Riceverai una mail con tutti i dettagli. Grazie");
+        }
+    };
+    var Url = "https://food.localecom.it/Cremasco/index.php/rest/default/V1/carts/mine/payment-information";
+    xhttp.open("POST", Url, true);
+    var body_request = "";
+    if (pagamento === "cashondelivery"){
+            body_request = {
+            "paymentMethod": {
+                "method": pagamento,
+                "extension_attributes": {
+                    "agreement_ids":["1"]
+                }
+            },
+            "billing_address": {
+                "email": "jdoe@example.com",
+                "region": "Cremona",
+                "region_code": "CR",
+                "country_id": "IT",
+                "street": ["Viale Europa 61"],
+                "postcode": "26013",
+                "city": "Crema",
+                "telephone": "512-555-1111",
+                "firstname": "Andrea",
+                "lastname": "Buffa"
+            }
+            };
+    }else{
+             body_request = {
+                "paymentMethod": {
+                    "method": pagamento,
+                    "additional_information":{
+                        "cc_cid":"000",
+                        "cc_type":"VI",
+                        "cc_exp_year":"2017",
+                        "cc_exp_month":"2",
+                        "cc_number":"xxxxxxxxxxxxxxxx"
+                    },
+                    "extension_attributes": {
+                        "agreement_ids":["1"]
+                    }
+                },
+                "billing_address": {
+                    "email": "jdoe@example.com",
+                    "region": "Cremona",
+                    "region_code": "CR",
+                    "country_id": "IT",
+                    "street": ["Viale Europa 61"],
+                    "postcode": "26013",
+                    "city": "Crema",
+                    "telephone": "512-555-1111",
+                    "firstname": "Andrea",
+                    "lastname": "Buffa"
+                }
+             };
+    }
+    xhttp.setRequestHeader("Content-Type", "application/json");
+    xhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
+    xhttp.setRequestHeader("Authorization", token_cliente);
+    //Header inserire il token d'accesso dell'integrazione di magento
+    xhttp.send(JSON.stringify(body_request));
+    //alert("Accesso tramite dati Form");
+}

@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/custom.css">
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+    <title>App LocalFood</title>
+</head>
+<body onload="CountCartItems();">
+<!--menu homepage solo hamburger -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fas fa-bars"></span>
+    </button>
+    <a class="navbar-brand" href="index.html" style="width:50px; height: 50px;"><img src="img/food_icon_transparent.png" style="width: 100%;"></a>
+    <a class="navbar-brand" href="carrello.html" style="width:50px; height: 50px;"><img src="img/cart_blue.png" style="width: 80%;"><span id="numero-carrello"></span></a>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="account.html">Account</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="ordini.html">Ordini</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contatti.html">Contatti</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="servizio.html">Servizio</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!--menu homepage solo hamburger -->
+<div class="container-fluid">
+    <!--<div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h3 class="display-5">Ecco tutti i negozi</h3>
+            <p class="lead">Che consegnano nella tua zona</p>
+        </div>
+    </div>-->
+    <script>
+        var indirizzo = window.localStorage.getItem("indirizzo_consegna");
+        if (indirizzo !== undefined){
+            var address_array = indirizzo.split(", ");
+        }else{
+            var url_string = window.location.href;
+            var url = new URL (url_string);
+            var address_array = url_string.split("%2C+");
+            var c = url.searchParams.get("inputAddress");
+        }
+        switch (address_array[2]){
+            case "Crema":
+                //alert("Stiamo cercando i negozi che consegnano in: " + c);
+                document.write("<!--segmenti localfood-->\n" +
+                    "    <div style=\"overflow: hidden;\">\n" +
+                    "        <div class=\"segmento_food\">\n" +
+                    "            <img src=\"img/burger_segmento.png\">\n" +
+                    "        </div>\n" +
+                    "        <div class=\"segmento_food\">\n" +
+                    "            <img src=\"img/pizza_segmento.png\">\n" +
+                    "        </div>\n" +
+                    "        <div class=\"segmento_food\">\n" +
+                    "            <img src=\"img/gelato_segmento.png\">\n" +
+                    "        </div>\n" +
+                    "        <div class=\"segmento_food\">\n" +
+                    "            <img src=\"img/sushi_segmento.png\">\n" +
+                    "        </div>\n" +
+                    "    </div>\n" +
+                    "    <!--segmenti localfood-->\n" +
+                    "    <!--banner offerte-->\n" +
+                    "    <div id=\"carouselOfferteSettimana\" class=\"carousel slide\" data-ride=\"carousel\">\n" +
+                    "        <div class=\"carousel-inner\">\n" +
+                    "            <div class=\"carousel-item active\">\n" +
+                    "                <img class=\"d-block w-100\" src=\"img/offerte_settimana_slider_scontomenu.png\" alt=\"First slide\">\n" +
+                    "            </div>\n" +
+                    "            <div class=\"carousel-item\">\n" +
+                    "                <img class=\"d-block w-100\" src=\"img/offerte_settimana_slider_hambuger.png\" alt=\"Second slide\">\n" +
+                    "            </div>\n" +
+                    "            <div class=\"carousel-item\">\n" +
+                    "                <img class=\"d-block w-100\" src=\"img/offerte_settimana_slider_bibitagratis.png\" alt=\"Third slide\">\n" +
+                    "            </div>\n" +
+                    "        </div>\n" +
+                    "    </div>\n" +
+                    "    <!--banner offerte-->\n" +
+                    "    <!-- banner novità-->\n" +
+                    "    <div id=\"carouselNovita\" class=\"carousel slide\" data-ride=\"carousel\">\n" +
+                    "        <div class=\"carousel-inner\">\n" +
+                    "            <div class=\"carousel-item active\">\n" +
+                    "                <img class=\"d-block w-100\" src=\"img/novita_slider_behappy.png\" alt=\"First slide\">\n" +
+                    "            </div>\n" +
+                    "            <div class=\"carousel-item\">\n" +
+                    "                <img class=\"d-block w-100\" src=\"img/novita_slider_2.png\" alt=\"Second slide\">\n" +
+                    "            </div>\n" +
+                    "            <div class=\"carousel-item\">\n" +
+                    "                <img class=\"d-block w-100\" src=\"img/novita_slider_3.png\" alt=\"Third slide\">\n" +
+                    "            </div>\n" +
+                    "        </div>\n" +
+                    "    </div>\n" +
+                    "    <!-- banner novità-->\n" +
+                    "    <!-- Card Negozi-->\n" +
+                    "    <!--Negozio Behappy-->\n" +
+                    "    <div class=\"card\">\n" +
+                    "        <a href=\"behappy_shoppage.html\" style=\"width: 50%\"><img class=\"card-img-top\" src=\"img/behappy.jpg\" alt=\"Card image cap\" style=\"width: 100%\"></a>\n" +
+                    "        <div class=\"card-body info_left_shop\">\n" +
+                    "            <a href=\"behappy_shoppage.html\">\n" +
+                    "                <h5 class=\"card-title\" style=\"margin-bottom: unset;\">BEHAPPY</h5>\n" +
+                    "                <p class=\"card-text\">\n" +
+                    "                    <span style=\"font-size: 20px;\">Hamburgeria<br></span>\n" +
+                    "                    <span style=\"font-size: 10px;\">A casa tua 19:45 - 21:30<br></span>\n" +
+                    "                    <span>Rating</span>\n" +
+                    "                </p>\n" +
+                    "            </a>\n" +
+                    "        </div>\n" +
+                    "    </div>\n" +
+                    "    <!--Negozio Behappy-->\n" +
+                    "    <p></p>\n" +
+                    "    <!--Rosticceria-->\n" +
+                    "    <div class=\"card\">\n" +
+                    "        <a href=\"rosticceria_shoppage.html\" style=\"width: 50%\"><img class=\"card-img-top\" src=\"img/etnico.jpg\" alt=\"Card image cap\" style=\"width: 100%\"></a>\n" +
+                    "        <div class=\"card-body info_left_shop\">\n" +
+                    "            <a href=\"rosticceria_shoppage.html\">\n" +
+                    "                <h5 class=\"card-title\" style=\"margin-bottom: unset;\">AlaTurka</h5>\n" +
+                    "                <p class=\"card-text\">\n" +
+                    "                    <span style=\"font-size: 20px;\">Etnico<br></span>\n" +
+                    "                    <span style=\"font-size: 10px;\">A casa tua 12:30 - 14:30<br></span>\n" +
+                    "                    <span>Rating</span>\n" +
+                    "                </p>\n" +
+                    "            </a>\n" +
+                    "        </div>\n" +
+                    "    </div>\n" +
+                    "    <!--Rosticceria-->\n" +
+                    "    <p></p>\n" +
+                    "    <!--Piadineria-->\n" +
+                    "    <div class=\"card\">\n" +
+                    "        <a href=\"lapiada_shoppage.html\" style=\"width: 50%\"><img class=\"card-img-top\" src=\"img/Nuova-apertura-Crema-Piazza-Garibaldi-articlethumbnailNews2015.jpg\" alt=\"Card image cap\" style=\"width: 100%\"></a>\n" +
+                    "        <div class=\"card-body info_left_shop\">\n" +
+                    "            <a href=\"lapiada_shoppage.html\">\n" +
+                    "                <h5 class=\"card-title\" style=\"margin-bottom: unset;\">La Piada</h5>\n" +
+                    "                <p class=\"card-text\">\n" +
+                    "                    <span style=\"font-size: 20px;\">Piadineria<br></span>\n" +
+                    "                    <span style=\"font-size: 10px;\">A casa tua 12:30 - 14:30<br></span>\n" +
+                    "                    <span>Rating</span>\n" +
+                    "                </p>\n" +
+                    "            </a>\n" +
+                    "        </div>\n" +
+                    "    </div>\n" +
+                    "    <!--Piadineria-->" +
+                    "    <p></p>\n" +
+                    "<!--Sanjo-->\n" +
+                "    <div class=\"card\">\n" +
+                "        <a href=\"lapiada_shoppage.html\" style=\"width: 50%\"><img class=\"card-img-top\" src=\"img/sanjo.jpg\" alt=\"Card image cap\" style=\"width: 100%\"></a>\n" +
+                "        <div class=\"card-body info_left_shop\">\n" +
+                "            <a href=\"sanjo_shoppage.html\">\n" +
+                "                <h5 class=\"card-title\" style=\"margin-bottom: unset;\">Sanjo</h5>\n" +
+                "                <p class=\"card-text\">\n" +
+                "                    <span style=\"font-size: 20px;\">Ristorante<br></span>\n" +
+                "                    <span style=\"font-size: 10px;\">A casa tua 12:30 - 14:30<br></span>\n" +
+                "                    <span>Rating</span>\n" +
+                "                </p>\n" +
+                "            </a>\n" +
+                "        </div>\n" +
+                "    </div>\n" +
+                "    <!--Sanjo-->" +
+                    "    <p></p>\n" +
+                    "<!--Botteghino-->\n" +
+                "    <div class=\"card\">\n" +
+                "        <a href=\"bottegnino_shoppage.html\" style=\"width: 50%\"><img class=\"card-img-top\" src=\"img/il-botteghino-di-carancini.jpg\" alt=\"Card image cap\" style=\"width: 100%\"></a>\n" +
+                "        <div class=\"card-body info_left_shop\">\n" +
+                "            <a href=\"bottegnino_shoppage.html\">\n" +
+                "                <h5 class=\"card-title\" style=\"margin-bottom: unset;\">Il Botteghino</h5>\n" +
+                "                <p class=\"card-text\">\n" +
+                "                    <span style=\"font-size: 20px;\">Ristorante<br></span>\n" +
+                "                    <span style=\"font-size: 10px;\">A casa tua 12:30 - 14:30<br></span>\n" +
+                "                    <span>Rating</span>\n" +
+                "                </p>\n" +
+                "            </a>\n" +
+                "        </div>\n" +
+                "    </div>\n" +
+                "    <!--Botteghino-->\n" +
+                    "    <!-- Card Negozi-->");
+                break;
+            case "Bagnolo Cremasco" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Camisano" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Campagnola Cremasca" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Capergnanica" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Capralba" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Casale Cremasco-Vidolasco" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Casaletto Ceredano" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Casaletto Vaprio" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Castel Gabbiano" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Chieve" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Credera Rubbiano" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Cremosano" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Dovera" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Fiesco" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Izano" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Monte Cremasco" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Montodine" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Moscazzano" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Offanengo" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Pianengo" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Ricengo" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Ripalta Arpina" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Ripalta Cremasca" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Ripalta Guerina" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Salvirola" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Sergnano" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Vaiano Cremasco" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Castelleone" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Casaletto di Sopra" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Romanengo" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Soresina" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Pieranica" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Quintano" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Torlino Vimercati" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Trescore Cremasco" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Trigolo" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Vailate" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Agnadello" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Cumignano sul Naviglio" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Genivolta" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Gombito" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Madignano" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Palazzo Pignano" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Ticengo" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Pandino" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            case "Rivolta d'Adda" :
+//alert ("Non disponibile");
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>");
+                break;
+            default:
+                //alert("Nessun negozio disponibile a: " + c);
+                document.write("<div class=\"jumbotron jumbotron-fluid\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "            <h3 class=\"display-5\">Ci dispiace ma consegnamo solo a Crema</h3>\n" +
+                    "            <p class=\"lead\">Non preoccuparti arriveremo presto a "+ c +"</p>\n" +
+                    "        </div>\n" +
+                    "    </div>")
+                break;
+        }
+    </script>
+</div>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
+

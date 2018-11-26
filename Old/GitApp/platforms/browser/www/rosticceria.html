@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <title>App LocalFood</title>
+</head>
+<body>
+<div class="container-fluid">
+    <!--menu-->
+    <nav>
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link active" href="index.html"><img src="img/logo.png" width="150px"></a>
+            </li>
+            <li class="nav-item">&nbsp;</li>
+            <li class="nav-item">
+                <a class="nav-link" href="account.html"><img src="img/nuovo_accedi_2.png" width="30px"></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="carrello.html"><img src="img/cart_blue.png" width="30px"></a>
+            </li>
+        </ul>
+    </nav>
+    <!--menu-->
+    <!-- Pagina negozio-->
+    <!-- Nome negozio-->
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/etnico.jpg" alt="..." style="width: 100%;">
+                    <div class="carousel-caption d-md-block">
+                        <h5>Rosticceria</h5>
+                        <p>Viale Europa 61, Crema - Tel: <a href="tel:3351656675">3351656675</a> </p>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <!-- Nome Negozio-->
+    <p></p>
+    <!--sezione menu-->
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Calzoni</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Pizze</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Dessert</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="pills-bevande-tab" data-toggle="pill" href="#pills-bevande" role="tab" aria-controls="pills-contact" aria-selected="false">Bevande</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+            <!--Custom Content descrzione dei prodotti-->
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Calzone pomodoro e mozzarella</h5>
+                        <small>4 &euro;</small>
+                    </div>
+                    <p class="mb-1">Pasta pizza al forno condita con pomodoro e mozzarella filante.</p>
+                    <small><button type="button" class="btn btn-info">Acquista</button></small>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Calzone Fanstasia</h5>
+                        <small class="text-muted">3 &euro;</small>
+                    </div>
+                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                    <small><button type="button" class="btn btn-info">Acquista</button></small>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Calzone Prosciutto</h5>
+                        <small class="text-muted">3,5 &euro;</small>
+                    </div>
+                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                    <small><button type="button" class="btn btn-info">Acquista</button></small>
+                </a>
+            </div>
+            <!--Custom Content descrzione dei prodotti-->
+        </div>
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+            <!--Custom Content descrzione dei prodotti-->
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Margherita</h5>
+                        <small>4 &euro;</small>
+                    </div>
+                    <p class="mb-1">Pasta pizza al forno condita con pomodoro e mozzarella filante.</p>
+                    <small><button type="button" class="btn btn-info">Acquista</button></small>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Marinara</h5>
+                        <small class="text-muted">3 &euro;</small>
+                    </div>
+                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                    <small><button type="button" class="btn btn-info">Acquista</button></small>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Capricciosa</h5>
+                        <small class="text-muted">3,5 &euro;</small>
+                    </div>
+                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                    <small><button type="button" class="btn btn-info">Acquista</button></small>
+                </a>
+            </div>
+            <!--Custom Content descrzione dei prodotti-->
+        </div>
+        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+            <!--Custom Content descrzione dei prodotti-->
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Tiramisu</h5>
+                        <small>4 &euro;</small>
+                    </div>
+                    <p class="mb-1">Pasta pizza al forno condita con pomodoro e mozzarella filante.</p>
+                    <small><button type="button" class="btn btn-info">Acquista</button></small>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Baci di dama</h5>
+                        <small class="text-muted">3 &euro;</small>
+                    </div>
+                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                    <small><button type="button" class="btn btn-info">Acquista</button></small>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Torrone</h5>
+                        <small class="text-muted">3,5 &euro;</small>
+                    </div>
+                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                    <small><button type="button" class="btn btn-info">Acquista</button></small>
+                </a>
+            </div>
+            <!--Custom Content descrzione dei prodotti-->
+        </div>
+        <div class="tab-pane fade" id="pills-bevande" role="tabpanel" aria-labelledby="pills-bevande-tab">
+            <!--Custom Content descrzione dei prodotti-->
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Becks</h5>
+                        <small>4 &euro;</small>
+                    </div>
+                    <p class="mb-1">Pasta pizza al forno condita con pomodoro e mozzarella filante.</p>
+                    <small><button type="button" class="btn btn-info">Acquista</button></small>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Coca Cola</h5>
+                        <small class="text-muted">3 &euro;</small>
+                    </div>
+                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                    <small><button type="button" class="btn btn-info">Acquista</button></small>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Acqua</h5>
+                        <small class="text-muted">3,5 &euro;</small>
+                    </div>
+                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                    <small><button type="button" class="btn btn-info">Acquista</button></small>
+                </a>
+            </div>
+            <!--Custom Content descrzione dei prodotti-->
+        </div>
+    </div>
+    <!--sezione menu-->
+    <!-- pagina negozio-->
+</div>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

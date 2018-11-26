@@ -1,0 +1,93 @@
+/* colori Localecom
+    Verde: #a0cc4b
+    Azzurro: #a0d9f6
+    Giallo: #f7e349
+ */
+
+body{
+    font-family:'Open Sans', sans-serif;
+    font-size: 0.90rem;
+}
+a {
+    color: #a0d9f6;
+}
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link{
+    background-color: #a0d9f6;
+    color: black;
+}
+.body-background{
+    background-image: url(../../img/drawable-port-xxxhdpi-screen.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#form_homepage{
+    position: absolute;
+    top: 77%;
+    width: 90%;
+}
+.btn-localecom{
+    border : 1px solid #a0d9f6;
+    background-color: #a0d9f6;
+}
+.segmento_food{
+    float: left;
+    margin-right: 5px;
+}
+.card{
+    clear: both;
+}
+#carouselOfferteSettimana{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+#carouselNovita{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.info_left_shop{
+    padding: unset;
+    position: absolute;
+    margin-left: 55%;
+    top: 10px;
+}
+#numero-carrello{
+    height: 20px;
+    width: 20px;
+    background-color: #a0d9f6;
+    border-radius: 50%;
+    display: inline-block;
+    color: white;
+    position: absolute;
+    right: 30px;
+    text-align: center;
+    margin: auto;
+    font-size: 13px;
+}
+.drappo{
+    background: #a0cc4b;
+    color: #fff;
+    display: block;
+    font-family: 'Montserrat',sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 10px;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    z-index: 10;
+    min-width: 50px;
+    border-radius: 0;
+    min-height: auto;
+    border: 0;
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+.drappo::after{
+    border: 7px solid #a0cc4b;
+    border-color: #a0cc4b transparent transparent #a0cc4b;
+}
