@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="da51677b-3aa6-4b67-b5c8-bd5ec0c68949" name="Default Changelist" comment="Implementazione modifica">
+    <list default="true" id="da51677b-3aa6-4b67-b5c8-bd5ec0c68949" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App Localfood/www/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/App Localfood/www/js/script.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,19 +22,19 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="1" />
-          <entry key="js" value="885" />
+          <entry key="html" value="2" />
+          <entry key="js" value="1206" />
           <entry key="md" value="30" />
-          <entry key="txt" value="244" />
+          <entry key="txt" value="300" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="16" />
-          <entry key="JavaScript" value="869" />
+          <entry key="HTML" value="17" />
+          <entry key="JavaScript" value="1189" />
           <entry key="Markdown" value="30" />
-          <entry key="PLAIN_TEXT" value="244" />
-          <entry key="Svelte" value="1" />
+          <entry key="PLAIN_TEXT" value="300" />
+          <entry key="Svelte" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -69,37 +68,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/App Localfood/www/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-109">
-              <caret line="1433" column="12" selection-start-line="1433" selection-start-column="12" selection-end-line="1433" selection-end-column="12" />
-              <folding>
-                <element signature="e#186#192#0" expanded="true" />
-                <element signature="e#185#191#0" expanded="true" />
-                <element signature="e#1041#1048#1" expanded="true" />
-                <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="e#68#74#0" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#span#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#span#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#1;n#span#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="e#68#74#0" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#span#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#span#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#1;n#span#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="e#85#91#0" expanded="true" />
-                <element signature="e#34#40#0" expanded="true" />
-                <element signature="e#1232#1239#1" expanded="true" />
-                <element signature="e#2706#2713#1" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h5#0;n#a#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#p#0;n#a#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#p#0;n#a#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="656">
+              <caret line="1058" column="27" selection-start-line="1058" selection-start-column="27" selection-end-line="1058" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -123,13 +93,18 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App Localfood/www/account.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="83" column="65" selection-start-line="83" selection-start-column="65" selection-end-line="83" selection-end-column="65" />
+            <state relative-caret-position="840">
+              <caret line="125" column="29" lean-forward="true" selection-start-line="56" selection-end-line="125" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>password</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -138,8 +113,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/App Localfood/www/account.html" />
         <option value="$PROJECT_DIR$/App Localfood/www/js/script.js" />
+        <option value="$PROJECT_DIR$/App Localfood/www/account.html" />
       </list>
     </option>
   </component>
@@ -432,7 +407,7 @@
       <option name="presentableId" value="Default" />
       <updated>1539592630427</updated>
       <workItem from="1539592635708" duration="1590000" />
-      <workItem from="1543228892611" duration="4155000" />
+      <workItem from="1543228892611" duration="8434000" />
     </task>
     <task id="LOCAL-00001" summary="Creazione Blank template Phonegap">
       <created>1539593340425</created>
@@ -469,11 +444,18 @@
       <option name="project" value="LOCAL" />
       <updated>1543232797970</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Implementazione modifica delle informazioni account">
+      <created>1543233293047</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1543233293047</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5745000" />
+    <option name="totallyTimeSpent" value="10024000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -532,14 +514,16 @@
     <MESSAGE value="Creazione Readme per il repository" />
     <MESSAGE value="Inserimento autocomplete address di google per l'inserimento di un nuovo indirizzo" />
     <MESSAGE value="Creazione modali per acocunt e indirizzo di spedizione" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creazione modali per acocunt e indirizzo di spedizione" />
+    <MESSAGE value="Implementazione modifica delle informazioni account" />
+    <MESSAGE value="Modifica password cliente" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modifica password cliente" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/App Localfood/www/js/script.js</url>
-          <line>1418</line>
+          <line>1448</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
@@ -551,7 +535,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/App Localfood/www/js/script.js</url>
-          <line>968</line>
+          <line>998</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
@@ -600,44 +584,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/App Localfood/www/account.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="83" column="65" selection-start-line="83" selection-start-column="65" selection-end-line="83" selection-end-column="65" />
+        <state relative-caret-position="840">
+          <caret line="125" column="29" lean-forward="true" selection-start-line="56" selection-end-line="125" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/App Localfood/www/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-109">
-          <caret line="1433" column="12" selection-start-line="1433" selection-start-column="12" selection-end-line="1433" selection-end-column="12" />
-          <folding>
-            <element signature="e#186#192#0" expanded="true" />
-            <element signature="e#185#191#0" expanded="true" />
-            <element signature="e#1041#1048#1" expanded="true" />
-            <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="e#68#74#0" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#span#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#span#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#1;n#span#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="e#68#74#0" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#span#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#span#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#1;n#span#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="e#85#91#0" expanded="true" />
-            <element signature="e#34#40#0" expanded="true" />
-            <element signature="e#1232#1239#1" expanded="true" />
-            <element signature="e#2706#2713#1" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h5#0;n#a#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#a#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#p#0;n#a#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="656">
+          <caret line="1058" column="27" selection-start-line="1058" selection-start-column="27" selection-end-line="1058" selection-end-column="27" />
         </state>
       </provider>
     </entry>
