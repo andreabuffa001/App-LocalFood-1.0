@@ -954,8 +954,48 @@ function HandleAccountPage(){
                     "<li class=\"list-group-item\">"+telefono+"</li>\n" +
                     "<li class=\"list-group-item\">"+mail+"</li>\n" +
                     "<li class=\"list-group-item\"><a href=\"ordini.html\">Gestisci Ordini</a></li>\n" +
+                    "<li class=\"list-group-item\"><a href=\"#\" data-toggle=\"modal\" data-target=\"#editCustomerInfo\">Aggiungi indirizzo</a></li>\n" +
                     "<li class=\"list-group-item\"><a href=\"#\" onclick=\"disconnettiUtente()\">Esci</a></li>" +
                     "</ul>" +
+                    "</div>" +
+                    "<!-- Modale Infor Cliente -->\n" +
+                    "<div class=\"modal fade\" id=\"editCustomerInfo\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n" +
+                    "  <div class=\"modal-dialog\" role=\"document\">\n" +
+                    "    <div class=\"modal-content\">\n" +
+                    "      <div class=\"modal-header\">\n" +
+                    "        <h5 class=\"modal-title\" id=\"exampleModalLabel\">Informazioni Cliente</h5><br>\n" +
+                    "        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n" +
+                    "          <span aria-hidden=\"true\">&times;</span>\n" +
+                    "        </button>\n" +
+                    "      </div>\n" +
+                    "      <div class=\"modal-body\">\n" +
+                    "<form id=\"modificaInfoCliente\" name=\"modificaInfoCliente\">" +
+                    "<div class=\"form-group\">\n" +
+                "        <label for=\"cognome\">Inserisci indirizzo per autocompilazione</label>\n" +
+                "        <input type=\"text\" class=\"form-control\" id=\"autocomplete\" name=\"autocomplete\" placeholder=\"Via,città o Cap\" onFocus=\"geolocate()\">\n" +
+                "    </div>\n" +
+                "<div id=\"address\" class=\"form-group\">\n"+
+                "      <label for=\"route\">Indirizzo</label>\n"+
+                "       <input id=\"route\" disabled=\"true\" class=\"form-control\"></input>\n"+
+                "      <label for=\"street_number\">Civico</label>\n"+
+                "       <input id=\"street_number\" disabled=\"true\" class=\"form-control\"></input>\n"+
+                "      <label for=\"locality\">Città</label>\n"+
+                "        <input id=\"locality\"\n disabled=\"true\" class=\"form-control\"></input>" +
+                "     <label for=\"administrative_area_level_1\">Regione</label>\n"+
+                "        <input id=\"administrative_area_level_1\" disabled=\"true\" class=\"form-control\"></input>" +
+                "     <label for=\"postal_code\">Cap</label>\n"+
+                "        <input id=\"postal_code\" disabled=\"true\" class=\"form-control\"></input>\n"+
+                "      <label for=\"country\">Nazione</label>\n"+
+                "        <input id=\"country\" disabled=\"true\" class=\"form-control\"></input>" +
+                "    </div>" +
+                    "</form>" +
+                    "      </div>\n" +
+                    "      <div class=\"modal-footer\">\n" +
+                    "        <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>\n" +
+                    "        <button type=\"button\" class=\"btn btn-primary\">Save changes</button>\n" +
+                    "      </div>\n" +
+                    "    </div>\n" +
+                    "  </div>\n" +
                     "</div>";
             }
         };
@@ -1344,4 +1384,68 @@ function HandleNegozioComuni(SearchComune){
     var Url = "comuni/comuni.json";
     xhttp.open("get", Url, true);
     xhttp.send();
+}
+
+function EditInfoCustomer() {
+    //token client sempre aggiornato e corretto
+    TokenCart();
+    var token_cliente = window.localStorage.getItem("token_cliente");
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (xhttp.readyState === XMLHttpRequest.DONE && xhttp.status === 200) {
+            //Stampa a video del carrello
+            var data = this.responseText;
+            var jsonResponse = JSON.parse(data);
+            //document.getElementById(id).value = jsonResponse.qty;
+            CountCartItems();
+            window.location.reload();
+        }
+    };
+    var Url = "https://food.localecom.it/Cremasco/index.php/rest/V1/customers/me";
+    var body_request = {
+        "customer": {
+            "id": 30,
+            "group_id": 1,
+            "default_billing": "17",
+            "default_shipping": "17",
+            "created_at": "2018-11-15 13:48:54",
+            "updated_at": "2018-11-26 10:50:05",
+            "created_in": "Default Store View",
+            "email": "a.buffa001@gmail.com",
+            "firstname": "Giovanni",
+            "lastname": "Bellini",
+            "store_id": 1,
+            "website_id": 1,
+            "addresses": [
+                {
+                    "id": 17,
+                    "customer_id": 30,
+                    "region": {
+                        "region_code": "CR",
+                        "region": "Cremona",
+                        "region_id": 0
+                    },
+                    "region_id": 0,
+                    "country_id": "IT",
+                    "street": [
+                        "Via XX Settembre, 33"
+                    ],
+                    "telephone": "+393342886484",
+                    "postcode": "26013",
+                    "city": "Crema",
+                    "firstname": "Antonio",
+                    "lastname": "Bellini",
+                    "default_shipping": true,
+                    "default_billing": true
+                }
+            ],
+            "disable_auto_group_change": 0
+        }
+    };
+    xhttp.open("PUT", Url, true);
+    xhttp.setRequestHeader("Content-Type", "application/json");
+    xhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
+    xhttp.setRequestHeader("Authorization", token_cliente);
+    //Header inserire il token d'accesso dell'integrazione di magento
+    xhttp.send(JSON.stringify(body_request));
 }
