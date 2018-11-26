@@ -949,17 +949,14 @@ function HandleAccountPage(){
                     "    </div>" +
                     "<div>" +
                     "<ul class=\"list-group\" id=\"user-info\">" +
-                    "<li class=\"list-group-item\">"+jsonResponse.email+"</li>\n" +
-                    "<li class=\"list-group-item\">"+indirizzo+", "+civico+", "+citta+", "+cap+"</li>\n" +
-                    "<li class=\"list-group-item\">"+telefono+"</li>\n" +
-                    "<li class=\"list-group-item\">"+mail+"</li>\n" +
+                    "<li class=\"list-group-item\"><a href=\"#\" data-toggle=\"modal\" data-target=\"#modalAccountCliente\">Informazioni Account</a></li>\n" +
+                    "<li class=\"list-group-item\"><a href=\"#\" data-toggle=\"modal\" data-target=\"#editCustomerInfo\">Indirizzi</a></li>\n" +
                     "<li class=\"list-group-item\"><a href=\"ordini.html\">Gestisci Ordini</a></li>\n" +
-                    "<li class=\"list-group-item\"><a href=\"#\" data-toggle=\"modal\" data-target=\"#editCustomerInfo\">Aggiungi indirizzo</a></li>\n" +
                     "<li class=\"list-group-item\"><a href=\"#\" onclick=\"disconnettiUtente()\">Esci</a></li>" +
                     "</ul>" +
                     "</div>" +
                     "<!-- Modale Account -->\n" +
-                    "<div class=\"modal fade\" id=\"editCustomerInfo\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n" +
+                    "<div class=\"modal fade\" id=\"modalAccountCliente\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n" +
                     "  <div class=\"modal-dialog\" role=\"document\">\n" +
                     "    <div class=\"modal-content\">\n" +
                     "      <div class=\"modal-header\">\n" +
@@ -969,6 +966,7 @@ function HandleAccountPage(){
                     "        </button>\n" +
                     "      </div>\n" +
                     "      <div class=\"modal-body\">" +
+                    "<form id=\"infocCliente\" name=\"infocCliente\">" +
                     "       <div class=\"form-group\">\n" +
                     "        <label for=\"nome\">Nome</label>\n" +
                     "        <input type=\"text\" class=\"form-control\" id=\"nome\" value=\""+name_stored+" "+cognome_stored+"\">\n" +
@@ -981,10 +979,11 @@ function HandleAccountPage(){
                     "        <label for=\"telefono\">Nome</label>\n" +
                     "        <input type=\"text\" class=\"form-control\" id=\"telefono\" value=\""+telefono+"\">\n" +
                     "       </div>\n" +
+                    "</form>" +
                     "      </div>\n" +
                     "      <div class=\"modal-footer\">\n" +
-                    "        <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>\n" +
-                    "        <button type=\"button\" class=\"btn btn-primary\">Save changes</button>\n" +
+                    "        <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Annulla</button>\n" +
+                    "        <button type=\"button\" class=\"btn btn-primary\" onclick=\"EditInfoCustomer()\">Salva modifiche</button>\n" +
                     "      </div>\n" +
                     "    </div>\n" +
                     "  </div>\n" +
@@ -1418,6 +1417,10 @@ function HandleNegozioComuni(SearchComune){
 }
 
 function EditInfoCustomer() {
+    var nome = document.infocCliente.nome.value;
+    var email = document.infocCliente.email.value;
+    var telefono = document.infocCliente.telefono.value;
+    var splitNome = nome.split(" ");
     //token client sempre aggiornato e corretto
     TokenCart();
     var token_cliente = window.localStorage.getItem("token_cliente");
@@ -1428,7 +1431,6 @@ function EditInfoCustomer() {
             var data = this.responseText;
             var jsonResponse = JSON.parse(data);
             //document.getElementById(id).value = jsonResponse.qty;
-            CountCartItems();
             window.location.reload();
         }
     };
@@ -1442,9 +1444,9 @@ function EditInfoCustomer() {
             "created_at": "2018-11-15 13:48:54",
             "updated_at": "2018-11-26 10:50:05",
             "created_in": "Default Store View",
-            "email": "a.buffa001@gmail.com",
-            "firstname": "Giovanni",
-            "lastname": "Bellini",
+            "email": email,
+            "firstname": splitNome[0],
+            "lastname": splitNome[1],
             "store_id": 1,
             "website_id": 1,
             "addresses": [
@@ -1461,7 +1463,7 @@ function EditInfoCustomer() {
                     "street": [
                         "Via XX Settembre, 33"
                     ],
-                    "telephone": "+393342886484",
+                    "telephone": telefono,
                     "postcode": "26013",
                     "city": "Crema",
                     "firstname": "Antonio",
