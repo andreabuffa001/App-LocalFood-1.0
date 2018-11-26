@@ -432,7 +432,6 @@ function TokenUtente () {
 function TokenCart(){
     var username = window.localStorage.getItem("username");
     var password = window.localStorage.getItem("password");
-    window.localStorage.removeItem("token_cliente");
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         var data = this.responseText;
