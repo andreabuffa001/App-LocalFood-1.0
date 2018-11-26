@@ -958,7 +958,38 @@ function HandleAccountPage(){
                     "<li class=\"list-group-item\"><a href=\"#\" onclick=\"disconnettiUtente()\">Esci</a></li>" +
                     "</ul>" +
                     "</div>" +
-                    "<!-- Modale Infor Cliente -->\n" +
+                    "<!-- Modale Account -->\n" +
+                    "<div class=\"modal fade\" id=\"editCustomerInfo\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n" +
+                    "  <div class=\"modal-dialog\" role=\"document\">\n" +
+                    "    <div class=\"modal-content\">\n" +
+                    "      <div class=\"modal-header\">\n" +
+                    "        <h5 class=\"modal-title\" id=\"exampleModalLabel\">Informazioni Cliente</h5><br>\n" +
+                    "        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n" +
+                    "          <span aria-hidden=\"true\">&times;</span>\n" +
+                    "        </button>\n" +
+                    "      </div>\n" +
+                    "      <div class=\"modal-body\">" +
+                    "       <div class=\"form-group\">\n" +
+                    "        <label for=\"nome\">Nome</label>\n" +
+                    "        <input type=\"text\" class=\"form-control\" id=\"nome\" value=\""+name_stored+" "+cognome_stored+"\">\n" +
+                    "       </div>\n" +
+                    "       <div class=\"form-group\">\n" +
+                    "        <label for=\"email\">Nome</label>\n" +
+                    "        <input type=\"text\" class=\"form-control\" id=\"email\" value=\""+jsonResponse.email+"\">\n" +
+                    "       </div>\n" +
+                    "       <div class=\"form-group\">\n" +
+                    "        <label for=\"telefono\">Nome</label>\n" +
+                    "        <input type=\"text\" class=\"form-control\" id=\"telefono\" value=\""+telefono+"\">\n" +
+                    "       </div>\n" +
+                    "      </div>\n" +
+                    "      <div class=\"modal-footer\">\n" +
+                    "        <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>\n" +
+                    "        <button type=\"button\" class=\"btn btn-primary\">Save changes</button>\n" +
+                    "      </div>\n" +
+                    "    </div>\n" +
+                    "  </div>\n" +
+                    "</div>"+
+                    "<!-- Modale Indirizzi -->\n" +
                     "<div class=\"modal fade\" id=\"editCustomerInfo\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n" +
                     "  <div class=\"modal-dialog\" role=\"document\">\n" +
                     "    <div class=\"modal-content\">\n" +
