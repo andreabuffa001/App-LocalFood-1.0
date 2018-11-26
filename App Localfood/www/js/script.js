@@ -709,16 +709,17 @@ function CountCartItems(){
             //Stampa a video del carrello
             var data = this.responseText;
             var jsonResponse = JSON.parse(data);
-            var list_itemsCart = "";
-            var i = 0;
-            var qty = 0;
-            for (i=0; i< jsonResponse.length; i++){
-                qty = jsonResponse[i].qty + qty;
-                console.log(qty);
-                var numeroCarrello = document.getElementById("numero-carrello");
-                numeroCarrello.innerText = qty;
+            if (!jsonResponse.qty){
+                document.getElementById("numero-carrello").innerText = "0";
+            }else{
+                var qty = 0;
+                for (i=0; i< jsonResponse.length; i++){
+                    qty = jsonResponse[i].qty + qty;
+                    console.log(qty);
+                    var numeroCarrello = document.getElementById("numero-carrello");
+                    numeroCarrello.innerText = qty;
+                }
             }
-
         }
     };
     var Url = "https://food.localecom.it/Cremasco/index.php/rest/default/V1/carts/mine/items";
@@ -950,11 +951,41 @@ function HandleAccountPage(){
                     "<div>" +
                     "<ul class=\"list-group\" id=\"user-info\">" +
                     "<li class=\"list-group-item\"><a href=\"#\" data-toggle=\"modal\" data-target=\"#modalAccountCliente\">Informazioni Account</a></li>\n" +
+                    "<li class=\"list-group-item\"><a href=\"#\" data-toggle=\"modal\" data-target=\"#passwordCliente\">Modifica Password</a></li>\n" +
                     "<li class=\"list-group-item\"><a href=\"#\" data-toggle=\"modal\" data-target=\"#editCustomerInfo\">Indirizzi</a></li>\n" +
                     "<li class=\"list-group-item\"><a href=\"ordini.html\">Gestisci Ordini</a></li>\n" +
                     "<li class=\"list-group-item\"><a href=\"#\" onclick=\"disconnettiUtente()\">Esci</a></li>" +
                     "</ul>" +
                     "</div>" +
+                    "<!-- Modale Password -->\n" +
+                    "<div class=\"modal fade\" id=\"passwordCliente\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n" +
+                    "  <div class=\"modal-dialog\" role=\"document\">\n" +
+                    "    <div class=\"modal-content\">\n" +
+                    "      <div class=\"modal-header\">\n" +
+                    "        <h5 class=\"modal-title\" id=\"exampleModalLabel\">Modifica Password</h5><br>\n" +
+                    "        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n" +
+                    "          <span aria-hidden=\"true\">&times;</span>\n" +
+                    "        </button>\n" +
+                    "      </div>\n" +
+                    "      <div class=\"modal-body\">" +
+                    "<form id=\"passwordCliente\" name=\"passwordCliente\">" +
+                    "       <div class=\"form-group\">\n" +
+                    "        <label for=\"current\">Vecchia Password</label>\n" +
+                    "        <input type=\"password\" class=\"form-control\" id=\"current\">\n" +
+                    "       </div>\n" +
+                    "       <div class=\"form-group\">\n" +
+                    "        <label for=\"new\">Nuova Password</label>\n" +
+                    "        <input type=\"password\" class=\"form-control\" id=\"new\">\n" +
+                    "       </div>\n" +
+                    "</form>" +
+                    "      </div>\n" +
+                    "      <div class=\"modal-footer\">\n" +
+                    "        <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Annulla</button>\n" +
+                    "        <button type=\"button\" class=\"btn btn-primary\" onclick=\"EditPassword()\">Salva modifiche</button>\n" +
+                    "      </div>\n" +
+                    "    </div>\n" +
+                    "  </div>\n" +
+                    "</div>"+
                     "<!-- Modale Account -->\n" +
                     "<div class=\"modal fade\" id=\"modalAccountCliente\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n" +
                     "  <div class=\"modal-dialog\" role=\"document\">\n" +
@@ -1474,6 +1505,39 @@ function EditInfoCustomer() {
             ],
             "disable_auto_group_change": 0
         }
+    };
+    xhttp.open("PUT", Url, true);
+    xhttp.setRequestHeader("Content-Type", "application/json");
+    xhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
+    xhttp.setRequestHeader("Authorization", token_cliente);
+    //Header inserire il token d'accesso dell'integrazione di magento
+    xhttp.send(JSON.stringify(body_request));
+}
+
+function EditPassword (){
+    var currentPassword = document.passwordCliente.current.value;
+    var newPassword = document.passwordCliente.new.value;
+    //token client sempre aggiornato e corretto
+    TokenCart();
+    var token_cliente = window.localStorage.getItem("token_cliente");
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        var data = this.responseText;
+        var jsonResponse = JSON.parse(data);
+        if (xhttp.readyState === XMLHttpRequest.DONE && xhttp.status === 200) {
+            //Stampa a video del carrello
+            //document.getElementById(id).value = jsonResponse.qty;
+            window.localStorage.setItem("password",newPassword);
+            window.location.reload();
+        }
+        if (xhttp.readyState === XMLHttpRequest.DONE && xhttp.status === 401) {
+            navigator.notification.alert(jsonResponse.message);
+        }
+    };
+    var Url = "https://food.localecom.it/Cremasco/index.php/rest/V1/customers/me/password";
+    var body_request = {
+        "currentPassword" : currentPassword,
+        "newPassword" : newPassword
     };
     xhttp.open("PUT", Url, true);
     xhttp.setRequestHeader("Content-Type", "application/json");
