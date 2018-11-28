@@ -31,7 +31,11 @@ a {
 }
 .segmento_food{
     float: left;
-    margin-right: 5px;
+    width: 25%;
+}
+.img_segmenti{
+    width: 100%;
+    padding: 1px;
 }
 .card{
     clear: both;

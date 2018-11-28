@@ -508,7 +508,7 @@
               "rating" : 5
             }
           ],
-        "offerte_attive":"",
+        "offerte_attive":["burger_segmento.png","pizza_segmento.png","gelato_segmento.png","sushi_segmento.png"],
         "segmenti_attivi":"",
         "novita":""
       }

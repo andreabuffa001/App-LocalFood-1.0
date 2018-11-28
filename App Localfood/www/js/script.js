@@ -614,11 +614,12 @@ function AddToCart(sku) {
     xhttp.onreadystatechange = function () {
         if (xhttp.readyState === XMLHttpRequest.DONE && xhttp.status === 200) {
             //Stampa a video del carrello
+            CountCartItems();
             var data = this.responseText;
             var jsonResponse = JSON.parse(data);
             console.log("Abbiamo aggiunto: "+ jsonResponse.name + " al carrello");
             navigator.notification.alert("Abbiamo aggiunto: "+ jsonResponse.name + " al carrello");
-            CountCartItems();
+
         }
     };
     id_cart = window.localStorage.getItem("id_carrello");
@@ -701,6 +702,7 @@ function ListCartItems(){
 }
 
 function CountCartItems(){
+    window.localStorage.removeItem("itemcart");
     TokenCart();
     var token_cliente = window.localStorage.getItem("token_cliente");
     var xhttp = new XMLHttpRequest();
@@ -709,18 +711,21 @@ function CountCartItems(){
             //Stampa a video del carrello
             var data = this.responseText;
             var jsonResponse = JSON.parse(data);
-            if (!jsonResponse.qty){
-                document.getElementById("numero-carrello").innerText = "0";
-            }else{
-                var qty = 0;
-                for (i=0; i< jsonResponse.length; i++){
-                    qty = jsonResponse[i].qty + qty;
-                    console.log(qty);
-                    var numeroCarrello = document.getElementById("numero-carrello");
-                    numeroCarrello.innerText = qty;
+            console.log(jsonResponse);
+                if (jsonResponse.length === 0){
+                    window.localStorage.setItem("itemcart",jsonResponse.length);
+                    document.getElementById("numero-carrello").innerText = "0";
+                }else{
+                    window.localStorage.setItem("itemcart",jsonResponse.length);
+                    var qty = 0;
+                    for (i=0; i< jsonResponse.length; i++){
+                        qty = jsonResponse[i].qty + qty;
+                        //console.log(qty);
+                        var numeroCarrello = document.getElementById("numero-carrello");
+                        numeroCarrello.innerText = qty;
+                    }
                 }
             }
-        }
     };
     var Url = "https://food.localecom.it/Cremasco/index.php/rest/default/V1/carts/mine/items";
     xhttp.open("GET", Url, true);
@@ -1260,7 +1265,6 @@ function RetriveOrders() {
 }
 
 function RemoveFromCart(item_id){
-
     //token client sempre aggiornato e corretto
     TokenCart();
     var token_cliente = window.localStorage.getItem("token_cliente");
@@ -1342,21 +1346,22 @@ function HandleNegozioComuni(SearchComune){
                     for(s=0; s<jsonResponse[i].comune.length;s++){
                         if (jsonResponse[i].comune[s].value === SearchComune){
                             if (jsonResponse[i].comune[s].abilitato === 1){
+                                for (jsonResponse[i].comune[s].offerte_attive.length){
+                                    //aggiungere gestione ogfgerte attive
+                                }
                             segmentiAttivi.innerHTML="<!--segmenti localfood-->\n" +
-                                "    <div style=\"overflow: hidden;\">\n" +
                                 "        <div class=\"segmento_food\">\n" +
-                                "            <img src=\"img/burger_segmento.png\">\n" +
+                                "            <img class=\"img_segmenti\" src=\"img/burger_segmento.png\">\n" +
                                 "        </div>\n" +
                                 "        <div class=\"segmento_food\">\n" +
-                                "            <img src=\"img/pizza_segmento.png\">\n" +
+                                "            <img class=\"img_segmenti\" src=\"img/pizza_segmento.png\">\n" +
                                 "        </div>\n" +
                                 "        <div class=\"segmento_food\">\n" +
-                                "            <img src=\"img/gelato_segmento.png\">\n" +
+                                "            <img class=\"img_segmenti\" src=\"img/gelato_segmento.png\">\n" +
                                 "        </div>\n" +
                                 "        <div class=\"segmento_food\">\n" +
-                                "            <img src=\"img/sushi_segmento.png\">\n" +
+                                "            <img class=\"img_segmenti\" src=\"img/sushi_segmento.png\">\n" +
                                 "        </div>\n" +
-                                "    </div>\n" +
                                 "    <!--segmenti localfood-->\n";
                             offerteAttive.innerHTML = "<!--banner offerte-->\n" +
                                 "    <div id=\"carouselOfferteSettimana\" class=\"carousel slide\" data-ride=\"carousel\">\n" +

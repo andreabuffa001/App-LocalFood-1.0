@@ -25,7 +25,7 @@
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
     <title>App LocalFood</title>
 </head>
-<body>
+<body onload="CountCartItems();">
 <!--menu homepage solo hamburger -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,7 +53,9 @@
 <!--menu homepage solo hamburger -->
 <div class="container-fluid" id="body-carrello">
 <script>
- if (CountCartItems() === undefined){
+
+var numItem = window.localStorage.getItem("itemcart");
+ if (numItem === "0" || numItem === null || numItem === undefined ){
      document.getElementById("body-carrello").innerHTML = "<div class=\"jumbotron jumbotron-fluid\">\n"+
                                                            "             <div class=\"container\">\n"+
                                                            "                 <h3 class=\"display-5\">Il tuo carrello è vuoto</h3>\n"+
@@ -143,8 +145,11 @@
 </div>
 <script type="text/javascript" src="cordova.js"></script>
 <script>
-    document.onload = CreateIdCart();
-    window.onload = ListCartItems();
+ document.onload= CreateIdCart();
+ window.onload= function (){
+     ListCartItems();
+
+ }
 </script>
 </body>
 </html>

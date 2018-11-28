@@ -2,15 +2,90 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da51677b-3aa6-4b67-b5c8-bd5ec0c68949" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App Localfood.zip" beforeDir="false" afterPath="$PROJECT_DIR$/App Localfood.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App Localfood/www/behappy_shoppage.html" beforeDir="false" afterPath="$PROJECT_DIR$/App Localfood/www/behappy_shoppage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App Localfood/www/bootstrap/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/App Localfood/www/bootstrap/css/custom.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App Localfood/www/carrello.html" beforeDir="false" afterPath="$PROJECT_DIR$/App Localfood/www/carrello.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App Localfood/www/comuni/comuni.json" beforeDir="false" afterPath="$PROJECT_DIR$/App Localfood/www/comuni/comuni.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App Localfood/www/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/App Localfood/www/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App Localfood/www/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/App Localfood/www/result.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/App Localfood/www/comuni/comuni.json">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="170">
+                    <caret line="491" selection-start-line="491" selection-end-line="491" />
+                    <folding>
+                      <element signature="e#40#505#0" />
+                      <element signature="e#511#968#0" />
+                      <element signature="e#974#1442#0" />
+                      <element signature="e#1448#1909#0" />
+                      <element signature="e#1915#2372#0" />
+                      <element signature="e#2378#2852#0" />
+                      <element signature="e#2858#3325#0" />
+                      <element signature="e#3331#3796#0" />
+                      <element signature="e#3802#4266#0" />
+                      <element signature="e#4272#4727#0" />
+                      <element signature="e#4733#5198#0" />
+                      <element signature="e#5204#5662#0" />
+                      <element signature="e#5668#6123#0" />
+                      <element signature="e#6129#6584#0" />
+                      <element signature="e#6590#7044#0" />
+                      <element signature="e#7050#7513#0" />
+                      <element signature="e#7519#7977#0" />
+                      <element signature="e#7983#8442#0" />
+                      <element signature="e#8448#8906#0" />
+                      <element signature="e#8912#9369#0" />
+                      <element signature="e#9375#9831#0" />
+                      <element signature="e#9837#10300#0" />
+                      <element signature="e#10306#10771#0" />
+                      <element signature="e#10777#11241#0" />
+                      <element signature="e#11247#11705#0" />
+                      <element signature="e#11711#12168#0" />
+                      <element signature="e#12174#12638#0" />
+                      <element signature="e#12748#13267#0" />
+                      <element signature="e#13506#13829#0" />
+                      <element signature="e#13843#14152#0" />
+                      <element signature="e#14166#14482#0" />
+                      <element signature="e#14496#14833#0" />
+                      <element signature="e#14993#15522#0" />
+                      <element signature="e#15532#16052#0" />
+                      <element signature="e#16182#16699#0" />
+                      <element signature="e#16827#17345#0" />
+                      <element signature="e#17353#17870#0" />
+                      <element signature="e#17878#18404#0" />
+                      <element signature="e#18412#18940#0" />
+                      <element signature="e#19068#19584#0" />
+                      <element signature="e#19714#20230#0" />
+                      <element signature="e#20360#20878#0" />
+                      <element signature="e#20888#21419#0" />
+                      <element signature="e#21429#21947#0" />
+                      <element signature="e#21957#22473#0" />
+                      <element signature="e#22483#23001#0" />
+                      <element signature="e#23011#23535#0" />
+                      <element signature="e#23545#24061#0" />
+                      <element signature="e#24189#24698#0" />
+                      <element signature="e#24828#25351#0" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-649393496">
@@ -25,34 +100,42 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="179" />
-          <entry key="js" value="1298" />
+          <entry key="css" value="28" />
+          <entry key="html" value="454" />
+          <entry key="js" value="1624" />
+          <entry key="json" value="12" />
           <entry key="md" value="30" />
           <entry key="txt" value="455" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+          <entry key="CSS" value="28" />
           <entry key="HTML" value="17" />
-          <entry key="JavaScript" value="1281" />
+          <entry key="JSON" value="12" />
+          <entry key="JavaScript" value="1607" />
           <entry key="Markdown" value="30" />
           <entry key="PLAIN_TEXT" value="455" />
-          <entry key="Svelte" value="179" />
+          <entry key="Svelte" value="454" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="6" />
+          <entry key="css" value="1" />
+          <entry key="html" value="7" />
           <entry key="js" value="1" />
+          <entry key="json" value="2" />
           <entry key="md" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="CSS" value="1" />
           <entry key="HTML" value="1" />
+          <entry key="JSON" value="2" />
           <entry key="JavaScript" value="1" />
           <entry key="Markdown" value="1" />
-          <entry key="Svelte" value="5" />
+          <entry key="Svelte" value="6" />
         </counts>
       </usages-collector>
     </session>
@@ -62,46 +145,28 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App Localfood/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1683">
+            <state relative-caret-position="840">
               <caret line="99" column="13" selection-start-line="76" selection-start-column="4" selection-end-line="99" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/App Localfood/www/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="791">
-              <caret line="71" selection-start-line="71" selection-end-line="71" />
+            <state relative-caret-position="179">
+              <caret line="1349" column="73" selection-start-line="1349" selection-start-column="73" selection-end-line="1349" selection-end-column="73" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App Localfood/www/result.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="313">
+              <caret line="53" column="56" selection-start-line="53" selection-start-column="56" selection-end-line="53" selection-end-column="56" />
               <folding>
-                <element signature="e#186#192#0" expanded="true" />
-                <element signature="e#185#191#0" expanded="true" />
-                <element signature="e#1041#1048#1" expanded="true" />
-                <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="e#68#74#0" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#span#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#span#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#1;n#span#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="e#68#74#0" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#span#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#span#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#1;n#span#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="e#85#91#0" expanded="true" />
-                <element signature="e#34#40#0" expanded="true" />
-                <element signature="e#1353#1360#1" expanded="true" />
-                <element signature="e#2662#2669#1" expanded="true" />
-                <element signature="e#4136#4143#1" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h5#0;n#a#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#p#0;n#a#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#p#0;n#a#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -110,7 +175,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App Localfood/www/registrati.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3094">
+            <state relative-caret-position="738">
               <caret line="182" column="29" selection-start-line="113" selection-end-line="182" selection-end-column="29" />
             </state>
           </provider>
@@ -119,22 +184,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App Localfood/www/behappy_shoppage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
+            <state relative-caret-position="656">
+              <caret line="83" column="8" selection-start-line="83" selection-start-column="8" selection-end-line="83" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App Localfood/www/carrello.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="41">
-              <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
-              <folding>
-                <element signature="n#style#0;n#button#0;n#h5#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#h5#0;n#div#0;n#div#1;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#h5#0;n#div#0;n#div#0;n#form#0;n#div#1;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="299">
+              <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App Localfood/www/bootstrap/css/custom.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="37" column="16" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -154,6 +223,11 @@
     <findStrings>
       <find>password</find>
       <find>place</find>
+      <find>countcartitems</find>
+      <find>count</find>
+      <find>addtocart</find>
+      <find>removefr</find>
+      <find>comuni</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -166,6 +240,9 @@
         <option value="$PROJECT_DIR$/App Localfood/www/account.html" />
         <option value="$PROJECT_DIR$/App Localfood/www/behappy_shoppage.html" />
         <option value="$PROJECT_DIR$/App Localfood/www/carrello.html" />
+        <option value="$PROJECT_DIR$/App Localfood/www/bootstrap/css/custom.css" />
+        <option value="$PROJECT_DIR$/App Localfood/www/result.html" />
+        <option value="$PROJECT_DIR$/App Localfood/www/comuni/comuni.json" />
         <option value="$PROJECT_DIR$/App Localfood/www/js/script.js" />
       </list>
     </option>
@@ -381,7 +458,7 @@
       <path value="$PROJECT_DIR$/sha1/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -410,6 +487,28 @@
               <item name="GitApp" type="462c0819:PsiDirectoryNode" />
               <item name="App Localfood" type="462c0819:PsiDirectoryNode" />
               <item name="www" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GitApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GitApp" type="462c0819:PsiDirectoryNode" />
+              <item name="App Localfood" type="462c0819:PsiDirectoryNode" />
+              <item name="www" type="462c0819:PsiDirectoryNode" />
+              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GitApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GitApp" type="462c0819:PsiDirectoryNode" />
+              <item name="App Localfood" type="462c0819:PsiDirectoryNode" />
+              <item name="www" type="462c0819:PsiDirectoryNode" />
+              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GitApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GitApp" type="462c0819:PsiDirectoryNode" />
+              <item name="App Localfood" type="462c0819:PsiDirectoryNode" />
+              <item name="www" type="462c0819:PsiDirectoryNode" />
+              <item name="comuni" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GitApp" type="b2602c69:ProjectViewProjectNode" />
@@ -460,7 +559,7 @@
       <updated>1539592630427</updated>
       <workItem from="1539592635708" duration="1590000" />
       <workItem from="1543228892611" duration="11577000" />
-      <workItem from="1543392102487" duration="584000" />
+      <workItem from="1543392102487" duration="11399000" />
     </task>
     <task id="LOCAL-00001" summary="Creazione Blank template Phonegap">
       <created>1539593340425</created>
@@ -522,13 +621,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13751000" />
+    <option name="totallyTimeSpent" value="24566000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -591,18 +690,20 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/App Localfood/www/js/script.js</url>
-          <line>1449</line>
+          <line>1454</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/App Localfood/www/js/script.js</url>
-          <line>886</line>
-          <option name="timeStamp" value="2" />
+          <line>1266</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/App Localfood/www/js/script.js</url>
-          <line>999</line>
-          <option name="timeStamp" value="4" />
+          <line>706</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -628,27 +729,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App Localfood/www/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1683">
-          <caret line="99" column="13" selection-start-line="76" selection-start-column="4" selection-end-line="99" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App Localfood/www/registrati.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3094">
-          <caret line="182" column="29" selection-start-line="113" selection-end-line="182" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App Localfood/www/behappy_shoppage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App Localfood/www/account.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1615">
@@ -656,52 +736,114 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App Localfood/www/js/script.js">
+    <entry file="file://$PROJECT_DIR$/App Localfood/www/behappy_shoppage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="791">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
-          <folding>
-            <element signature="e#186#192#0" expanded="true" />
-            <element signature="e#185#191#0" expanded="true" />
-            <element signature="e#1041#1048#1" expanded="true" />
-            <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="e#68#74#0" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#span#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#span#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#1;n#span#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="e#68#74#0" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#span#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#span#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#1;n#span#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="e#85#91#0" expanded="true" />
-            <element signature="e#34#40#0" expanded="true" />
-            <element signature="e#1353#1360#1" expanded="true" />
-            <element signature="e#2662#2669#1" expanded="true" />
-            <element signature="e#4136#4143#1" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h5#0;n#a#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#a#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#p#0;n#a#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="656">
+          <caret line="83" column="8" selection-start-line="83" selection-start-column="8" selection-end-line="83" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App Localfood/www/registrati.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="738">
+          <caret line="182" column="29" selection-start-line="113" selection-end-line="182" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/App Localfood/www/carrello.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+        <state relative-caret-position="299">
+          <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App Localfood/www/bootstrap/css/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="37" column="16" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App Localfood/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="99" column="13" selection-start-line="76" selection-start-column="4" selection-end-line="99" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App Localfood/www/result.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="53" column="56" selection-start-line="53" selection-start-column="56" selection-end-line="53" selection-end-column="56" />
           <folding>
-            <element signature="n#style#0;n#button#0;n#h5#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#h5#0;n#div#0;n#div#1;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#h5#0;n#div#0;n#div#0;n#form#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App Localfood/www/comuni/comuni.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="491" selection-start-line="491" selection-end-line="491" />
+          <folding>
+            <element signature="e#40#505#0" />
+            <element signature="e#511#968#0" />
+            <element signature="e#974#1442#0" />
+            <element signature="e#1448#1909#0" />
+            <element signature="e#1915#2372#0" />
+            <element signature="e#2378#2852#0" />
+            <element signature="e#2858#3325#0" />
+            <element signature="e#3331#3796#0" />
+            <element signature="e#3802#4266#0" />
+            <element signature="e#4272#4727#0" />
+            <element signature="e#4733#5198#0" />
+            <element signature="e#5204#5662#0" />
+            <element signature="e#5668#6123#0" />
+            <element signature="e#6129#6584#0" />
+            <element signature="e#6590#7044#0" />
+            <element signature="e#7050#7513#0" />
+            <element signature="e#7519#7977#0" />
+            <element signature="e#7983#8442#0" />
+            <element signature="e#8448#8906#0" />
+            <element signature="e#8912#9369#0" />
+            <element signature="e#9375#9831#0" />
+            <element signature="e#9837#10300#0" />
+            <element signature="e#10306#10771#0" />
+            <element signature="e#10777#11241#0" />
+            <element signature="e#11247#11705#0" />
+            <element signature="e#11711#12168#0" />
+            <element signature="e#12174#12638#0" />
+            <element signature="e#12748#13267#0" />
+            <element signature="e#13506#13829#0" />
+            <element signature="e#13843#14152#0" />
+            <element signature="e#14166#14482#0" />
+            <element signature="e#14496#14833#0" />
+            <element signature="e#14993#15522#0" />
+            <element signature="e#15532#16052#0" />
+            <element signature="e#16182#16699#0" />
+            <element signature="e#16827#17345#0" />
+            <element signature="e#17353#17870#0" />
+            <element signature="e#17878#18404#0" />
+            <element signature="e#18412#18940#0" />
+            <element signature="e#19068#19584#0" />
+            <element signature="e#19714#20230#0" />
+            <element signature="e#20360#20878#0" />
+            <element signature="e#20888#21419#0" />
+            <element signature="e#21429#21947#0" />
+            <element signature="e#21957#22473#0" />
+            <element signature="e#22483#23001#0" />
+            <element signature="e#23011#23535#0" />
+            <element signature="e#23545#24061#0" />
+            <element signature="e#24189#24698#0" />
+            <element signature="e#24828#25351#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App Localfood/www/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="1349" column="73" selection-start-line="1349" selection-start-column="73" selection-end-line="1349" selection-end-column="73" />
         </state>
       </provider>
     </entry>

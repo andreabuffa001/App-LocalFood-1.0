@@ -81,12 +81,12 @@
 <script type="text/javascript" src="js/script.js"></script>
 </body>
 <script>
+        var numeroCarrello = document.getElementById("numero-carrello");
+        CountCartItems();
+        numeroCarrello.innerText = window.localStorage.getItem("NumeroCarrello");
     window.onload = function() {
         console.log( "window loaded" );
         NomeCate(9);
-      var numeroCarrello = document.getElementById("numero-carrello");
-        CountCartItems();
-        numeroCarrello.innerText = window.localStorage.getItem("NumeroCarrello");
   }
 </script>
 </html>
