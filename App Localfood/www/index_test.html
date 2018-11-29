@@ -2,9 +2,131 @@
     <head>
         <script src="https://int-ecommerce.nexi.it/ecomm/XPayBuild/js?alias=ALIAS_WEB_00007136"></script>
         <script type="text/javascript" src="sha1/src/sha1.js"></script>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+            <link rel="stylesheet" href="bootstrap/css/custom.css">
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+            <script src="js/jquery-3.3.1.slim.min.js"></script>
+            <script src="js/popper.min.js"></script>
+            <script src="bootstrap/js/bootstrap.min.js"></script>
+            <meta charset="utf-8" />
+            <meta name="format-detection" content="telephone=no" />
+            <meta name="msapplication-tap-highlight" content="no" />
+            <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+            <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+            <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+            <script type="text/javascript" src="js/script.js"></script>
+            <!-- Good default declaration:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+                * Enable eval(): add 'unsafe-eval' to default-src
+            * Create your own at http://cspisawesome.com
+            -->
+            <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+            <title>App LocalFood</title>
     </head>
     <body>
-        <button id="btnPaga">Paga</button>
+    <div class="container-fluid">
+        <div class="accordion" id="section-orders">
+            <div class="card">
+            <div class="card-header" id="heading37">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#pending_37" aria-expanded="true" aria-controls="pending_37">
+                        <p>Ordine n°:372018-11-26 16:29:05(pending)</p>
+                    </button>
+                </h5>
+            </div>
+            <div id="pending_37" class="collapse show" aria-labelledby="heading37" data-parent="#section-orders">
+                <div class="card-body">
+                <!--Sezione dedicata ai metodi di pagamento -->
+                    <h2 id="total-sales"></h2>
+                        <ul class="list-group" id="section-payments-methods">
+                            <li class="list-group-item">Crea il tuo panino</li>
+                            <li class="list-group-item">Pane-Pane in cassetta</li>
+                            <li class="list-group-item">Capocollo</li>
+                            <li class="list-group-item">Cetriolo</li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+            <div class="card">
+            <div class="card-header" id="heading36">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#pending_36" aria-expanded="false" aria-controls="pending_36">
+                        <p>Ordine n°:362018-11-26 16:25:02(pending)</p>
+                    </button>
+                </h5>
+            </div>
+            <div id="pending_36" class="collapse" aria-labelledby="heading36" data-parent="#section-orders">
+                <div class="card-body">
+                <!--Sezione dedicata ai metodi di pagamento -->
+                    <h2 id="total-sales"></h2>
+                    <ul class="list-group" id="section-payments-methods">
+                        <li class="list-group-item">Crea il tuo panino</li>
+                        <li class="list-group-item">Pane-Pane in cassetta</li>
+                        <li class="list-group-item">Capocollo</li>
+                        <li class="list-group-item">Cetriolo</li>
+                     </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!--separatore-->
+    <div class="accordion" id="accordionExample">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Collapsible Group Item #1
+            </button>
+          </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="card-body">
+            <h2 id="total-sales"></h2>
+                                    <ul class="list-group" id="section-payments-methods">
+                                        <li class="list-group-item">Crea il tuo panino</li>
+                                        <li class="list-group-item">Pane-Pane in cassetta</li>
+                                        <li class="list-group-item">Capocollo</li>
+                                        <li class="list-group-item">Cetriolo</li>
+                                    </ul>
+                                    </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Collapsible Group Item #2
+            </button>
+          </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+          <div class="card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Collapsible Group Item #3
+            </button>
+          </h5>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+          <div class="card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <button id="btnPaga" class="btn btn-localecom">Paga</button>
 
         <script type='text/javascript'>
         var date = new Date();

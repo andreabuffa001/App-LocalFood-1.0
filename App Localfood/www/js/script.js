@@ -1202,17 +1202,17 @@ function RetriveOrders() {
                     if (i === 0) {
                         listOrders += "" +
                             "<div class=\"card\">\n" +
-                            "            <div class=\"card-header\" id=\"heading" + jsonResponse.items[i].entity_id + "\">\n" +
+                            "            <div style=\"padding:1px;\" class=\"card-header\" id=\"heading" + jsonResponse.items[i].entity_id + "\">\n" +
                             "                <h5 class=\"mb-0\">\n" +
-                            "                    <button " + "class=\"btn btn-link\" type=\"button\" " + "data-toggle=\"collapse\" " + "data-target=\"#" + jsonResponse.items[i].entity_id + "_" + jsonResponse.items[i].status + "\" " + "aria-expanded=\"true\" " + "aria-controls=\"" + jsonResponse.items[i].entity_id + "_" + jsonResponse.items[i].status + "\">\n" +
-                            "                        <p>Ordine n°:" + jsonResponse.items[i].entity_id + "" + jsonResponse.items[i].created_at + "(" + jsonResponse.items[i].status + ")</p>" +
+                            "                    <button style=\"width:100%;font-size:22px;\" class=\"btn btn-link\" type=\"button\" " + "data-toggle=\"collapse\" " + "data-target=\"#" + jsonResponse.items[i].status + "_" + jsonResponse.items[i].entity_id + "\" " + "aria-expanded=\"true\" " + "aria-controls=\"" + jsonResponse.items[i].status + "_" + jsonResponse.items[i].entity_id + "\">\n" +
+                            "                        Ordine n°:" + jsonResponse.items[i].entity_id +" (" + jsonResponse.items[i].status + ")" +
                             "                    </button>\n" +
                             "                </h5>\n" +
                             "            </div>\n" +
-                            "            <div " + "id=\"" + jsonResponse.items[i].entity_id + "_" + jsonResponse.items[i].status + "\" " + "class=\"collapse show\" " + "aria-labelledby=\"heading" + jsonResponse.items[i].entity_id + "\" " + "data-parent=\"#section-orders\">\n" +
+                            "            <div " + "id=\"" + jsonResponse.items[i].status + "_" + jsonResponse.items[i].entity_id + "\" " + "class=\"collapse show\" " + "aria-labelledby=\"heading" + jsonResponse.items[i].entity_id + "\" " + "data-parent=\"#section-orders\">\n" +
                             "                <div class=\"card-body\">\n" +
                             "                    <!--Sezione dedicata ai metodi di pagamento -->\n" +
-                            "                    <h2 id=\"total-sales\"></h2>\n" +
+                            "                    <h4 id=\"total-sales\">Effettuato il " + jsonResponse.items[i].created_at +"</h4>\n" +
                             "                    <ul class=\"list-group\" id=\"section-payments-methods\">";
                         for (t = 0; t < jsonResponse.items[i].items.length; t++) {
                             listOrders += "<li class=\"list-group-item\">" + jsonResponse.items[i].items[t].name + "</li>";
@@ -1221,23 +1221,23 @@ function RetriveOrders() {
                             "                    </ul>\n" +
                             "                </div>\n" +
                             "            </div>\n" +
-                            "        </div>";
+                            "</div>";
                         //console.log(list_PaymentMethods);
                         document.getElementById("section-orders").innerHTML = listOrders;
                     } else {
                         listOrders += "" +
                             "<div class=\"card\">\n" +
-                            "            <div class=\"card-header\" id=\"heading" + jsonResponse.items[i].entity_id + "\">\n" +
+                            "            <div style=\"padding:1px;\" class=\"card-header\" id=\"heading" + jsonResponse.items[i].entity_id + "\">\n" +
                             "                <h5 class=\"mb-0\">\n" +
-                            "                    <button " + "class=\"btn btn-link collapsed\" " + "type=\"button\" " + "data-toggle=\"collapse\" " + "data-target=\"#" + jsonResponse.items[i].entity_id + "_" + jsonResponse.items[i].status + "\" " + "aria-expanded=\"false\" " + "aria-controls=\"" + jsonResponse.items[i].entity_id + "_" + jsonResponse.items[i].status + "\">\n" +
-                            "                        <p>Ordine n°:" + jsonResponse.items[i].entity_id + "" + jsonResponse.items[i].created_at + "(" + jsonResponse.items[i].status + ")</p>\n" +
+                            "                    <button style=\"width:100%;font-size:22px;\" class=\"btn btn-link collapsed\" " + "type=\"button\" " + "data-toggle=\"collapse\" " + "data-target=\"#" + jsonResponse.items[i].status + "_" + jsonResponse.items[i].entity_id + "\" " + "aria-expanded=\"false\" " + "aria-controls=\"" + jsonResponse.items[i].status + "_" + jsonResponse.items[i].entity_id + "\">\n" +
+                            "                        Ordine n°:" + jsonResponse.items[i].entity_id + " (" + jsonResponse.items[i].status + ")\n" +
                             "                    </button>\n" +
                             "                </h5>\n" +
                             "            </div>\n" +
-                            "            <div " + "id=\"" + jsonResponse.items[i].entity_id + "_" + jsonResponse.items[i].status + "\" " + "class=\"collapse\" " + "aria-labelledby=\"heading" + jsonResponse.items[i].entity_id + "\" " + "data-parent=\"#section-orders\">\n" +
+                            "            <div " + "id=\"" + jsonResponse.items[i].status + "_" + jsonResponse.items[i].entity_id + "\" " + "class=\"collapse\" " + "aria-labelledby=\"heading" + jsonResponse.items[i].entity_id + "\" " + "data-parent=\"#section-orders\">\n" +
                             "                <div class=\"card-body\">\n" +
                             "                    <!--Sezione dedicata ai metodi di pagamento -->\n" +
-                            "                    <h2 id=\"total-sales\"></h2>\n" +
+                            "                    <h4 id=\"total-sales\">Effettuato il: " + jsonResponse.items[i].created_at + "</h4>\n" +
                             "                    <ul class=\"list-group\" id=\"section-payments-methods\">";
                         for (t = 0; t < jsonResponse.items[i].items.length; t++) {
                             listOrders += "<li class=\"list-group-item\">" + jsonResponse.items[i].items[t].name + "</li>";
@@ -1249,8 +1249,10 @@ function RetriveOrders() {
                             "        </div>";
                         //console.log(list_PaymentMethods);
                         document.getElementById("section-orders").innerHTML = listOrders;
+
                     }
                 }
+                console.log(listOrders);
             }
         };
         var Url = "https://food.localecom.it/Cremasco/index.php/rest/V1/orders/?searchCriteria[filterGroups][0][filters][1][conditionType]=ep&searchCriteria[filterGroups][0][filters][1][field]=customer_id&searchCriteria[filterGroups][0][filters][1][value]=" + customer_id + "&searchCriteria[sortOrders][0][field]=entity_id&searchCriteria[sortOrders][0][direction]=DESC";
@@ -1346,9 +1348,6 @@ function HandleNegozioComuni(SearchComune){
                     for(s=0; s<jsonResponse[i].comune.length;s++){
                         if (jsonResponse[i].comune[s].value === SearchComune){
                             if (jsonResponse[i].comune[s].abilitato === 1){
-                                for (jsonResponse[i].comune[s].offerte_attive.length){
-                                    //aggiungere gestione ogfgerte attive
-                                }
                             segmentiAttivi.innerHTML="<!--segmenti localfood-->\n" +
                                 "        <div class=\"segmento_food\">\n" +
                                 "            <img class=\"img_segmenti\" src=\"img/burger_segmento.png\">\n" +
